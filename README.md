@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/web-workbook.svg?style=svg)](https://circleci.com/gh/AustinCodingAcademy/web-workbook)
+[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/dell-workbook.svg?style=svg&circle-token=e3deaf91f620f335a80d61cc2a4956da26f4a59f)](https://circleci.com/gh/AustinCodingAcademy/dell-workbook)
 
 ![](http://en.gravatar.com/userimage/107370100/a08594145564536138dfaaf072c7b241.png)
 # Austin Coding Academy
