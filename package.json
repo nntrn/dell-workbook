@@ -1,32 +1,31 @@
 {
-  "name": "web-workbook",
+  "name": "dell-workbook",
   "version": "1.0.0",
-  "description": "Austin Coding Academy - Web Workbook",
+  "description": "Austin Coding Academy - Dell Workbook",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AustinCodingAcademy/web-workbook.git"
+    "url": "git+https://github.com/AustinCodingAcademy/dell-workbook.git"
   },
   "scripts": {
     "lint": "stylelint ./**/*.css && eslint . && htmllint {*.html,./**/*.html}",
     "start": "cd . && http-server -c-1",
     "test": "mocha",
-    "javascripting": "javascripting",
     "node-sass": "node-sass --output-style=expanded",
     "node-sass-watch": "node-sass --output-style=expanded --watch"
   },
   "author": "Kevin Colten",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/AustinCodingAcademy/web-workbook/issues"
+    "url": "https://github.com/AustinCodingAcademy/dell-workbook/issues"
   },
-  "homepage": "https://github.com/AustinCodingAcademy/web-workbook#readme",
+  "homepage": "https://github.com/AustinCodingAcademy/dell-workbook#readme",
   "dependencies": {
     "eslint": "^4.19.1",
     "htmllint-cli": "github:kevincolten/htmllint-cli",
     "http-server": "^0.11.1",
-    "javascripting": "github:austincodingacademy/javascripting",
+    "javascripting": "^2.6.1",
     "jquery": "^3.3.1",
-    "jsdom": "^11.12.0",
+    "jsdom": "^9.12.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.3",
     "postcss": "^6.0.23",
