@@ -17,12 +17,9 @@ body {
 .planet {
   margin: 20px;
   box-sizing: border-box;
-  border-radius: 100%;
+  border-radius: 70%;
   background: black;
-  border-radius: 100%;
   display: inline-grid;
-  width: 100px;
-  height: 100px;
   z-index: 10 !important;
 }
 
@@ -33,40 +30,42 @@ body {
 .core {
   background-color: yellow;
   border-color: orange;
+  box-sizing: content-box;
   border-style: solid;
   border-width: .25rem;
-  border-radius: 100%;
+  border-radius: 70%;
   display: inline-grid;
   opacity: .8;
 }
 
 .mantle {
   padding: 20%;
+  box-sizing: content-box;
   background-color: orangered;
   border-color: red;
   border-width: .25rem;
   border-style: solid;
-  border-radius: 100%;
+  border-radius: 70%;
   display: inline-grid;
   opacity: .8;
 }
 
 .crust {
   padding: 10%;
-  box-sizing: border-box;
+  box-sizing: content-box;
   background-color: brown;
   border-color: #720f0f;
   border-style: solid;
   border-width: .25rem;
-  border-radius: 100%;
-  display: grid;
+  border-radius: 70%;
+  display: inline-grid;
   box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: opacity 700ms linear;
 }
 
 .crust:hover {
-  opacity: 1;
+  opacity: .9;
   z-index: 20;
 }
 
@@ -80,11 +79,10 @@ Venus (6,052 km / 3,761 miles)95% the size of Earth
 Mars (3,390 km / 2,460 miles) 53% the size of Earth
 Mercury (2,440 km / 1,516 miles) 38% the size of Earth 
 */
-
 .mercury {
   width: 70px;
   height: 70px;
-  border: double .5rem transparent;
+  border: double .3rem transparent;
   background-image: linear-gradient(20deg, #b6adab 20%, #dfdbda 80%), radial-gradient(circle at top left, #b6adab, #dfdbda);
   background-origin: border-box;
 }
@@ -92,7 +90,7 @@ Mercury (2,440 km / 1,516 miles) 38% the size of Earth
 .venus {
   height: 110px;
   width: 110px;
-  border: double .5rem transparent;
+  border: double .5em transparent;
   background-image: linear-gradient(20deg, #b8b447 1%, #b1af60 99%), radial-gradient(circle at top left, #b8b447, #b1af60);
   background-origin: border-box;
 }
@@ -100,7 +98,7 @@ Mercury (2,440 km / 1,516 miles) 38% the size of Earth
 .earth {
   height: 130px;
   width: 130px;
-  border: double .5rem transparent;
+  border: double .4rem transparent;
   background-image: linear-gradient(#2b6cc0, #5E8249), radial-gradient(circle at top left, #2b6cc0, #5E8249);
   background-origin: border-box;
 }
@@ -109,7 +107,7 @@ Mercury (2,440 km / 1,516 miles) 38% the size of Earth
   height: 120px;
   width: 120px;
   border: double .5rem transparent;
-  background-image: linear-gradient(#FE5C43, #FF3D1D), radial-gradient(circle at top left, #FE5C43, #FF3D1D);
+  background-image: linear-gradient(50deg, #FE5C43, #f7300f), radial-gradient(circle at top left, #FE5C43, #FF3D1D);
   background-origin: border-box;
 }
 
@@ -140,7 +138,7 @@ Mercury (2,440 km / 1,516 miles) 38% the size of Earth
 .neptune {
   height: 155px;
   width: 155px;
-  border: double .5rem transparent;
+  border: double .6rem transparent;
   background-image: linear-gradient(20deg, #519dff 20%, #0367e8 40%, #519dff 60%, #0367e8 80%, #519dff 100%), radial-gradient(circle at top left, #519dff, #0367e8);
   background-origin: border-box;
 }
@@ -148,7 +146,7 @@ Mercury (2,440 km / 1,516 miles) 38% the size of Earth
 .pluto {
   width: 50px;
   height: 50px;
-  border: double .5rem transparent;
+  border: double .5em transparent;
   background-image: linear-gradient(20deg, #805F47 20%, #854339 80%), radial-gradient(circle at top left, #805F47, #854339);
   background-origin: border-box;
 }
