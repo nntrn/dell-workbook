@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  background-image: linear-gradient(to top right, rgba(4, 23, 77, 0.4), rgba(250, 250, 250, .20));
+  background: radial-gradient(circle at top right, rgba(6, 17, 50, 0.7), rgba(0, 0, 0, 1));
 }
 
 .planet:hover:after {
@@ -177,8 +177,7 @@ Mercury (2,440 km / 1,516 miles) 38% the size of Earth
   height: 4px;
   border-radius: 10px;
   background: #777;
-  box-shadow: 0 0 0 2px rgba(0,0,0,.025)
-
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .025)
 }
 
 #starrysky {
