@@ -1,0 +1,186 @@
+body {
+  background-color: black;
+  background-image: linear-gradient(to top right, rgba(4, 23, 77, 0.4), rgba(250, 250, 250, .20));
+}
+
+.planet:hover:after {
+  content: attr(class);
+  color: white;
+  position: absolute;
+  font-size: 1rem;
+  margin-top: -35px;
+  display: table;
+  opacity: .7;
+  z-index: 20;
+}
+
+.planet {
+  margin: 20px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  background: black;
+  border-radius: 100%;
+  display: inline-grid;
+  width: 100px;
+  height: 100px;
+  z-index: 10 !important;
+}
+
+.planet:hover {
+  box-shadow: 0 0 0px 5px rgba(250, 250, 250, 0.05);
+}
+
+.core {
+  background-color: yellow;
+  border-color: orange;
+  border-style: solid;
+  border-width: .25rem;
+  border-radius: 100%;
+  display: inline-grid;
+  opacity: .8;
+}
+
+.mantle {
+  padding: 20%;
+  background-color: orangered;
+  border-color: red;
+  border-width: .25rem;
+  border-style: solid;
+  border-radius: 100%;
+  display: inline-grid;
+  opacity: .8;
+}
+
+.crust {
+  padding: 10%;
+  box-sizing: border-box;
+  background-color: brown;
+  border-color: #720f0f;
+  border-style: solid;
+  border-width: .25rem;
+  border-radius: 100%;
+  display: grid;
+  box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 700ms linear;
+}
+
+.crust:hover {
+  opacity: 1;
+  z-index: 20;
+}
+
+/* 
+Jupiter (69,911 km / 43,441 miles) 1,120% the size of Earth
+Saturn (58,232 km / 36,184 miles945% the size of Earth
+Uranus (25,362 km / 15,759 miles)  400% the size of Earth
+Neptune (24,622 km / 15,299 miles) 388% the size of Earth
+Earth (6,371 km / 3,959 miles)
+Venus (6,052 km / 3,761 miles)95% the size of Earth
+Mars (3,390 km / 2,460 miles) 53% the size of Earth
+Mercury (2,440 km / 1,516 miles) 38% the size of Earth 
+*/
+
+.mercury {
+  width: 70px;
+  height: 70px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(20deg, #b6adab 20%, #dfdbda 80%), radial-gradient(circle at top left, #b6adab, #dfdbda);
+  background-origin: border-box;
+}
+
+.venus {
+  height: 110px;
+  width: 110px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(20deg, #b8b447 1%, #b1af60 99%), radial-gradient(circle at top left, #b8b447, #b1af60);
+  background-origin: border-box;
+}
+
+.earth {
+  height: 130px;
+  width: 130px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(#2b6cc0, #5E8249), radial-gradient(circle at top left, #2b6cc0, #5E8249);
+  background-origin: border-box;
+}
+
+.mars {
+  height: 120px;
+  width: 120px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(#FE5C43, #FF3D1D), radial-gradient(circle at top left, #FE5C43, #FF3D1D);
+  background-origin: border-box;
+}
+
+.jupiter {
+  height: 220px;
+  width: 220px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(180deg, #D16F1B 0%, #E89150 25%, #D16F1B 50%, #E89150 75%, #D16F1B 100%), radial-gradient(circle at top left, #D16F1B, #E89150);
+  background-origin: border-box;
+}
+
+.saturn {
+  height: 180px;
+  width: 180px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(-60deg, #D1AA5E 0%, #888 25%, #D1AA5E 50%, #888 75%, #D1AA5E 100%), radial-gradient(circle at top left, #D1AA5E, #888);
+  background-origin: border-box;
+}
+
+.uranus {
+  height: 160px;
+  width: 160px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(#9DB1BF, #6fbfe5), radial-gradient(circle at top left, #9DB1BF, #6fbfe5);
+  background-origin: border-box;
+}
+
+.neptune {
+  height: 155px;
+  width: 155px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(20deg, #519dff 20%, #0367e8 40%, #519dff 60%, #0367e8 80%, #519dff 100%), radial-gradient(circle at top left, #519dff, #0367e8);
+  background-origin: border-box;
+}
+
+.pluto {
+  width: 50px;
+  height: 50px;
+  border: double .5rem transparent;
+  background-image: linear-gradient(20deg, #805F47 20%, #854339 80%), radial-gradient(circle at top left, #805F47, #854339);
+  background-origin: border-box;
+}
+
+.stars {
+  z-index: 1 !important;
+}
+
+.star0 {
+  width: 2px;
+  height: 2px;
+  background: #F9E547;
+  border-radius: 2px;
+}
+
+.star1 {
+  width: 2px;
+  height: 2px;
+  border-radius: 10px;
+  background: white;
+  opacity: .7;
+}
+
+.star2 {
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  background: #777;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.025)
+
+}
+
+#starrysky {
+  position: fixed;
+}
