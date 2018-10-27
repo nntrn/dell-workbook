@@ -54,7 +54,7 @@ body {
   border-style: solid;
   border-radius: 70%;
   display: inline-grid;
-  opacity: .8;
+  opacity: .7;
 }
 
 .crust {
@@ -73,7 +73,7 @@ body {
 }
 
 .crust:hover {
-  opacity: .75;
+  opacity: .55;
   z-index: 20;
   filter: saturate(2);
   transform: skewY(2deg);
@@ -125,18 +125,20 @@ body {
 }
 
 .saturn:before {
-  content: " .";
+  content: ".";
   color: white;
   position: absolute;
-  box-shadow: -29px 5px rgba(209, 170, 94, .7), 29px 5px rgba(209, 170, 94, .6), 0px 12px rgba(209, 170, 94, .74);
-  border: 9px solid rgba(250, 250, 250, .06);
+  box-shadow: -10px 12px rgba(136, 136, 136, 0.61), -40px 5px rgba(209, 170, 94, 1), 39px 5px rgba(209, 170, 94, 1), 0px 12px rgba(209, 170, 94, .74);
+  border: 9px solid rgba(250, 250, 250, .16);
   display: inline-grid;
-  width: 180px;
+  width: 190px;
   margin: 50px -20px;
   z-index: 100;
-  box-sizing: content-box;
+  box-sizing: bord-box;
   border-radius: 70%;
   mix-blend-mode: multiply;
+  filter: grayscale(.8);
+  transform: rotate(15deg);
 }
 
 .saturn:hover:before {
@@ -213,25 +215,22 @@ body {
 
 @keyframes starglow {
   to {
-    box-shadow: 0 10px 10px white;
+      box-shadow: 0 10px 10px white;
   }
-
   from {
-    box-shadow: 0 10px 0px transparent;
+      box-shadow: 0 10px 0px transparent;
   }
 }
 
 @keyframes twinkle {
   0% {
-    opacity: 0;
+      opacity: 0;
   }
-
   50% {
-    opacity: .5;
+      opacity: .5;
   }
-
   100% {
-    opacity: 0;
+      opacity: 0;
   }
 }
 
