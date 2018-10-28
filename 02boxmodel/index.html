@@ -4,6 +4,7 @@
   <title>planets</title>
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
   <meta name="viewport" content="initial-scale=1, maximum-scale=.8">
 </head>
 
@@ -11,82 +12,104 @@
   <div id="starrysky"></div>
 
   <div class="container">
-    <div class="planet mercury">
+
+    <div class="planet mercury" tag="mercury" name="my">
       <div class="crust">
         <div class="mantle">
-          <div class="core"></div>
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="planet venus">
+    <div class="planet venus" tag="venus" name="very">
       <div class="crust">
         <div class="mantle">
-          <div class="core"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="planet earth">
-      <div class="crust">
-        <div class="mantle">
-          <div class="core"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="planet mars">
-      <div class="crust">
-        <div class="mantle">
-          <div class="core"></div>
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
         </div>
       </div>
     </div>
 
 
-    <div class="planet jupiter">
+    <div class="planet earth" tag="earth" name="eager">
+      <div class="continents"></div>
       <div class="crust">
         <div class="mantle">
-          <div class="core"></div>
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="planet saturn">
-      <div class="crust">
-        <div class="mantle">
-          <div class="core"></div>
+
+      <div class="planet mars" tag="mars" name="mom">
+        <div class="crust">
+          <div class="mantle">
+            <div class="core">
+              <div class="planet-2d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="planet jupiter" tag="jupiter" name="just">
+        <div class="crust">
+          <div class="mantle">
+            <div class="core">
+              <div class="planet-2d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="planet saturn" tag="saturn" name="served">
+        <div class="crust">
+          <div class="mantle">
+            <div class="core">
+              <div class="planet-2d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="planet uranus" tag="uranus" name="us">
+        <div class="crust">
+          <div class="mantle">
+            <div class="core">
+              <div class="planet-2d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="planet neptune" tag="neptune" name="nine">
+        <div class="crust">
+          <div class="mantle">
+            <div class="core">
+              <div class="planet-2d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="planet pluto" tag="pluto" name="pizzas">
+        <div class="crust">
+          <div class="mantle">
+            <div class="core">
+              <div class="planet-2d"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="planet uranus">
-      <div class="crust">
-        <div class="mantle">
-          <div class="core"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="planet neptune">
-      <div class="crust">
-        <div class="mantle">
-          <div class="core"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="planet pluto">
-      <div class="crust">
-        <div class="mantle">
-          <div class="core"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="jquery.js"></script>
-  <script>
+    <script src="jquery.js"></script>
+    <script>
     stars = "";
 
     for (i = 0; i < 800; i++) {
