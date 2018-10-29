@@ -31,14 +31,20 @@ header {
   font-size: 2em;
   padding: .25rem;
 }
+header:after {
+  clear: both;
+}
 
 .site-link {
+   float: left;
+   width:20%;
   opacity: 0;
 }
 
 nav {
   background: transparent;
   float: right;
+
   margin: 4px;
   font-weight: 500;
 }
@@ -148,12 +154,6 @@ section {
   box-shadow: inset 0 -4px #3D9970;
 }
 
-.tab:first-child {
-}
-
-.tab img {
-}
-
 /* STYELES */
 a {
   color: #ecebeb;
@@ -172,12 +172,14 @@ font-size: 1.25em;
 }
 */
 /* For devices larger than 400px */
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   nav {
       width: 100%;
+      font-size:1.2em;
   }
 
   nav li {
-      width: 100%
+      width: 100%;
+
   }
 }
