@@ -70,8 +70,7 @@ nav:after {
   clear: both
 }
 
-nav ul,
-.navigation {
+nav ul, .navigation {
   padding: 0 10px;
   margin: 0px;
   list-style-type: none;
@@ -79,8 +78,7 @@ nav ul,
 
 .navigation *:before {
   padding: 6px;
-  zoom: .65;
-  mix-blend-mode: soft-light;
+  zoom:.65; mix-blend-mode: soft-light;
 }
 
 .home:before {
@@ -137,14 +135,14 @@ section {
 
 .tabs {
   margin-bottom: .2rem;
-  background: rgba(250, 250, 250, .3);
+  background: rgba(250,250,250,.3);
   background-color: #27af72;
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
 }
 
 .tab:hover input {
-  box-shadow: inset 0 -50px rgba(250, 250, 250, .3);
+  box-shadow: inset 0 -50px rgba(250,250,250,.3);
 }
 
 .page {
@@ -156,7 +154,7 @@ section {
 input[type="button"] {
   width: 33.3%;
   padding: 10px 0px;
-  box-shadow: inset 0 -3px rgba(250, 250, 250, .3);
+  box-shadow: inset 0 -3px rgba(250,250,250,.3);
   text-align: center;
   border: none;
   vertical-align: middle;
@@ -196,8 +194,7 @@ fieldset {
   padding: 0px;
 }
 
-input[type="date"],
-input[type="text"] {
+input[type="date"], input[type="text"] {
   background: transparent;
   display: table-cell;
   margin: .1rem;
@@ -205,15 +202,13 @@ input[type="text"] {
   color: white;
   font-size: .8em;
   font-weight: 400;
-  padding: .65rem;
+  padding: .6rem;
   border-radius: 4px;
-  border: 2px solid rgba(250, 250, 250, .6);
+  border: 2px solid rgba(250,250,250,.6);
 }
 
-input[type="text"]:active,
-input[type="text"]:focus,
-input[type="text"]:hover {
-  background: rgba(250, 250, 250, .3)
+input[type="text"]:active, input[type="text"]:focus, input[type="text"]:hover {
+  background: rgba(250,250,250,.2)
 }
 
 input[type="submit"] {
@@ -226,17 +221,57 @@ input[type="submit"] {
 }
 
 select {
-  margin-right: .7rem;
-  padding: 10px !important;
+  height: 30px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 2px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: .6em;
 }
 
 input[type="radio"] {
-  border: 0px solid white;
-  margin-left: .5rem;
 }
 
 .no-label label {
   display: none;
+}
+
+label {
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+}
+
+label {
+  display: inline;
+  font-weight: normal;
+  margin-right: 3%;
+}
+
+/* RESPONSIVE
+******************************************************** */
+.row {
+}
+
+.row:after {
+  clear: both;
+}
+
+.col {
+  display: inline;
+  margin: 10px 2px;
+  height: 100%;
 }
 
 /* ETC
@@ -245,8 +280,7 @@ input[type="radio"] {
   color: #27af72;
 }
 
-.clearfix:after,
-.clearfix:before {
+.clearfix:after, .clearfix:before {
   content: " ";
   display: table;
 }
@@ -260,17 +294,19 @@ input[type="radio"] {
 /* For devices smaller than 500px */
 @media (max-width: 500px) {
   nav li {
-    display: block;
-    width: 100%;
+      display:block;
+      width: 100%;
   }
 
   nav .navigation li {
-    font-size: .9em;
+      font-size: .9em;
   }
 }
 
 @media (max-width: 480px) {
-  .contents {
-    background: blue;
+  input[type="date"], input[type="text"], select {
+      width:100%;
+      display: table-row;
+      margin: .4rem 0;
   }
 }

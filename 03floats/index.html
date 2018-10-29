@@ -80,23 +80,35 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
             </p>
 
             <p>
-              <label for="select">Passengers</label>
-              <select id="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-              </select>
+              <div class="row">
 
-              <label for="radio1">
-                <input id="radio1" name="radio" type="radio" class="radio"
-                  checked="checked">
-                Return</label>
-              <label for="radio2">
-                <input id="radio2" name="radio" type="radio" class="radio"> One
-                way</label>
+                <div class="col">
+                  <label for="select">Passengers</label>
+                  <select id="select" class="select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </div>
+
+                <div class="col">
+                  <label for="radio1">
+                    <input id="radio1" name="radio" type="radio" class="radio"
+                      checked="checked">
+                    Return</label>
+                  <label for="radio2">
+                    <input id="radio2" name="radio" type="radio" class="radio">
+                    One
+                    way</label>
+
+                </div>
+
+              </div>
+
+
 
               <input type="submit" value="Search flights">
           </fieldset>
