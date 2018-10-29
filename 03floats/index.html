@@ -33,7 +33,7 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
 
     <nav>
       <ul class="navigation">
-        <li class="home"><a href="#">home</a></li>
+        <li class="home selected"><a href="#">home</a></li>
         <li class="deals"><a href="#">travel deals</a></li>
         <li class="schedule"><a href="#">flight schedule</a></li>
         <li class="register"><a href="#">register/login</a></li>
@@ -46,16 +46,15 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
 
     <div class="content">
 
-
       <div class="clearfix tabs">
-        
-        <div class="tab plane" > <input type="button">
+
+        <div class="tab plane"> <input type="button">
           <!-- <img src="img/plane-icon.png"> -->
         </div>
         <div class="tab hotel"> <input type="button">
           <!-- <img src="img/hotel-icon.png"> -->
         </div>
-        <div class="tab car"> <input type="button" >
+        <div class="tab car"> <input type="button">
           <!-- <img src="img/car-icon.png"> -->
         </div>
 
@@ -63,45 +62,46 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
 
       <div class="page flights-page">
         <form>
-            <fieldset>
-          <p class="no-label">
-            <label for="text">depart</label>
-            <input id="text" type="text" placeholder="depart">
+          <fieldset>
+            <p class="no-label">
+              <label for="text">depart</label>
+              <input id="text" type="text" placeholder="depart">
 
-            <label for="text">arrive</label>
-            <input id="text" type="text" placeholder="arrive">
-          </p>
+              <label for="text">arrive</label>
+              <input id="text" type="text" placeholder="arrive">
+            </p>
 
+            <p class="no-label">
+              <label for="date">Date</label>
+              <input id="date" type="date">
 
-          <p class="no-label">
-            <label for="date">Date</label>
-            <input id="date" type="date">
+              <label for="date">Date</label>
+              <input id="date" type="date">
+            </p>
 
-            <label for="date">Date</label>
-            <input id="date" type="date">
-          </p>
+            <p>
+              <label for="select">Passengers</label>
+              <select id="select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
 
-        <p>
-          <label for="select">Passengers</label>
-          <select id="select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-          </select>
+              <label for="radio1">
+                <input id="radio1" name="radio" type="radio" class="radio"
+                  checked="checked">
+                Return</label>
+              <label for="radio2">
+                <input id="radio2" name="radio" type="radio" class="radio"> One
+                way</label>
 
-          <label for="radio1">
-            <input id="radio1" name="radio" type="radio" class="radio" checked="checked">
-            Return</label>
-          <label for="radio2">
-            <input id="radio2" name="radio" type="radio" class="radio"> One way</label>
-
-            <input type="submit" value="Search flights">
+              <input type="submit" value="Search flights">
           </fieldset>
-          </form>
-  
+        </form>
+
 
         </p>
 
