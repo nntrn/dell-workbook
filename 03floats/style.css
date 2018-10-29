@@ -2,7 +2,6 @@
 MARKDOWN HTML:
 https://nntrn.github.io/dell-workbook/03floats/README
 */
-
 /* Base Styles
 ******************************************************** */
 * {
@@ -51,16 +50,18 @@ header:after {
 }
 
 .website-logo img {
-  width: 50%;
+  width: 14rem;
   height: auto;
 }
 
+/* NAV ******************* */
 nav {
   background: transparent;
   font-weight: 500;
   bottom: 0;
-  display: inline;
+  display: table-cell;
   float: left;
+  margin-top: 2.5%;
 }
 
 nav .navigation li {
@@ -76,27 +77,18 @@ nav ul, .navigation {
   list-style-type: none;
 }
 
+.navigation li a {
+  font-family: Roboto;
+  font-weight: 500;
+}
+
 .navigation *:before {
   padding: .5rem;
-  zoom:.65; mix-blend-mode: soft-light;
+  color: #06233c ;
+  font-family: FontAwesome;
 }
 
-.home:before {
-  content: url(img/home-icon.png);
-}
-
-.deals:before {
-  content: url(img/deal-icon.png);
-}
-
-.schedule:before {
-  content: url(img/schedule-icon.png);
-}
-
-.register:before {
-  content: url(img/login-icon.png);
-}
-
+/* SECTION ******************* */
 section:before {
   position: absolute;
   background: linear-gradient(to bottom, #0a2761, #0542b4, #a3d2f6);
@@ -118,6 +110,7 @@ section {
   background-size: 100% 100%;
 }
 
+/* CONTENT ******************* */
 .content {
   min-width: 40%;
   max-height: 40%;
@@ -130,22 +123,25 @@ section {
   border-radius: .5em;
   font-size: .8em;
   font-weight: 500;
+  box-shadow: 0 .3rem 0px #07162f;
 }
 
 .tabs {
   margin-bottom: .2rem;
-  background: rgba(250,250,250,.3);
+  background: rgba(250, 250, 250, .3);
   background-color: #27af72;
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
 }
 
+
 .tab:hover input {
-  box-shadow: inset 0 -50px rgba(250,250,250,.3);
+  box-shadow: inset 0 100px rgba(250, 250, 250, .2);
 }
 
 .page {
   padding: .5rem;
+
 }
 
 /* Forms
@@ -163,7 +159,7 @@ form {
 input[type="button"] {
   width: 33.3%;
   padding: 10px 0px;
-  box-shadow: inset 0 -3px rgba(250,250,250,.3);
+  box-shadow: inset 0 -3px rgba(250, 250, 250, .3);
   text-align: center;
   border: none;
   vertical-align: middle;
@@ -174,7 +170,7 @@ input[type="button"] {
 }
 
 .plane input {
-  background: #39CCCC;
+  background: #097edc;
   border-top-left-radius: .3rem;
   background-image: url(img/plane-icon.png);
 }
@@ -196,20 +192,23 @@ input[type="button"] {
 }
 
 input[type="date"], input[type="text"] {
+
   background: #082f56;
   display: table-cell;
   margin: .1rem;
   width: 47%;
   color: white;
-  font-size: .8em;
+  font-size: 1em;
   font-weight: 400;
-  padding: .6rem;
+  padding: .6rem .4rem;
+  font-weight:500;
   border-radius: 4px;
-  border: 2px solid rgba(250,250,250,.6);
+  border: 2px solid #1e1e34;
 }
 
 input[type="text"]:active, input[type="text"]:focus, input[type="text"]:hover {
-  background: rgba(250,250,250,.2)
+  background: rgba(250, 250, 250, .15);
+
 }
 
 input[type="submit"] {
@@ -218,7 +217,10 @@ input[type="submit"] {
   margin: 1rem auto;
   padding: .3rem;
   background: #0066ff;
+  border: 3px solid #064bb2;
   color: white;
+font-weight:500;
+font-family: Arial, sans-serif;
 }
 
 select {
@@ -259,7 +261,6 @@ label {
 
 /* RESPONSIVE
 ******************************************************** */
-
 .row:after {
   clear: both;
 }
@@ -289,7 +290,7 @@ label {
 /* For devices smaller than 500px */
 @media (max-width: 500px) {
   nav li, .navigation {
-      display:block;
+      display: block;
       width: 100%;
       font-size: 1.1em;
   }
@@ -299,5 +300,19 @@ label {
       display: table-row;
       margin: .4rem 0;
   }
-
 }
+
+/*  nav li:before {
+      font-size:2em;
+      display: table;
+      padding: 0px!important;
+  }
+  nav li a {
+      display: table-cell;
+  }
+  nav li {
+      width: 10%!important;
+      word-break: keep-all;
+      white-space: pre;
+      overflow: hidden;
+  } */
