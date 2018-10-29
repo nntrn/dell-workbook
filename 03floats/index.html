@@ -27,24 +27,25 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
 <body>
 
   <header>
+      <div class="clearfix website-logo">
+          <img src="img/logo.png">
+        </div>
 
-
-    <a class="site-link" href="#">UX ATLANTIC</a>
-
-    <nav>
+     <nav>
       <ul class="navigation">
         <li class="home"><a href="#">home</a></li>
         <li class="deals"><a href="#">travel deals</a></li>
         <li class="schedule"><a href="#">flight schedule</a></li>
         <li class="register"><a href="#">register/login</a></li>
       </ul>
-    </nav>
+      </nav>
 
   </header>
 
   <section>
 
     <div class="content">
+
 
       <div class="clearfix tabs">
         <div class="tab plane"><img src="img/plane-icon.png"></li>
@@ -57,8 +58,42 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
       </div>
 
       <div class="page flights-page">
-        flight page
-     
+        <form>
+          <p>
+              <label for="text">depart</label>
+              <input id="text" type="text" placeholder="depart">
+  
+              <label for="text">arrive</label>
+              <input id="text" type="text" placeholder="arrive">
+          </p>
+           
+
+            <p>
+                <label for="date">Date</label>
+                <input id="date" type="date">
+
+                <label for="date">Date</label>
+                <input id="date" type="date">
+            </p>
+
+        </form>
+
+        <p>
+            <label for="select">Select</label>
+            <select id="select">
+                <option>Option One</option>
+                <option>Option Two</option>
+                <option>Option Three</option>
+            </select>
+
+            <label for="radio1">
+                <input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label>
+            <label for="radio2">
+                <input id="radio2" name="radio" type="radio" class="radio"> Option 2</label>
+                
+        </p>
+
+
       </div>
 
       <!-- <div class="page hotels-page">
