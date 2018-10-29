@@ -1,8 +1,5 @@
 /* 
-README.md:
-https://github.com/nntrn/dell-workbook/tree/gh-pages/03floats
-
-README.html:
+MARKDOWN HTML:
 https://nntrn.github.io/dell-workbook/03floats/README
 */
 
@@ -60,11 +57,10 @@ header:after {
 
 nav {
   background: transparent;
-  float: left;
-  margin: 4px;
   font-weight: 500;
   bottom: 0;
   display: inline;
+  float: left;
 }
 
 nav .navigation li {
@@ -236,9 +232,6 @@ select {
   margin: .6em;
 }
 
-input[type="radio"] {
-}
-
 .no-label label {
   display: none;
 }
@@ -266,8 +259,6 @@ label {
 
 /* RESPONSIVE
 ******************************************************** */
-.row {
-}
 
 .row:after {
   clear: both;
@@ -276,7 +267,6 @@ label {
 .col {
   display: inline;
   margin: 10px 2px;
-  height: 100%;
 }
 
 /* ETC

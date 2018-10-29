@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:////Users/annie/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.8/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      <link rel="stylesheet" href="file:////Users/annie/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.10/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
       
       
       
@@ -220,7 +220,6 @@ code.language-yaml {
 }
 .markdown-preview.markdown-preview body {
   font-family: -apple-system, Helvetica, Roboto, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
-  font-size: 14px;
   padding: 0 26px;
   line-height: 18px;
   word-wrap: break-word;
@@ -253,10 +252,10 @@ code.language-yaml {
 .markdown-preview.markdown-preview hr {
   border: 0;
   height: 2px;
-  border-bottom: 2px solid;
+  border-bottom: 0px solid transparent;
 }
 .markdown-preview.markdown-preview h1 {
-  padding-bottom: 0.3em;
+  padding-bottom: 0.3rem;
   line-height: 1.2;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -350,7 +349,8 @@ code.language-yaml {
   background: #ffd9e0;
   border-left: 12px solid #ff4a6e;
 }
-.markdown-preview.markdown-preview blockquote.info {
+.markdown-preview.markdown-preview blockquote.info,
+.markdown-preview.markdown-preview blockquote {
   background: #fff6d5;
   border-left: 12px solid #f0d461;
 }
@@ -358,8 +358,7 @@ code.language-yaml {
   background: #86e29b;
   border-left: 12px solid #28a745;
 }
-.markdown-preview.markdown-preview blockquote.note,
-.markdown-preview.markdown-preview blockquote {
+.markdown-preview.markdown-preview blockquote.note {
   background: #f0f0f0;
   border-left: 12px solid #ccc;
 }
@@ -401,7 +400,10 @@ code.language-yaml {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
-      <h2>assignment 3: floats</h2>
+      <h1 class="mume-header" id="assignment-3-floats">assignment 3: floats</h1>
+
+<ul>
+<li><a href="#assignment-3-floats">assignment 3: floats</a>
 <ul>
 <li><a href="#requirements">requirements</a></li>
 <li><a href="#setting-up">setting up</a></li>
@@ -417,9 +419,9 @@ code.language-yaml {
 </li>
 <li><a href="#create-section">create section</a></li>
 <li><a href="#content">.content</a></li>
-<li><a href="#additional">additional</a>
+<li><a href="#additional">additional</a></li>
+<li><a href="#add-gradient-to-background">add gradient to background</a>
 <ul>
-<li><a href="#add-gradient-to-background">add gradient to background</a></li>
 <li><a href="#responsive-page-design">responsive page design</a></li>
 </ul>
 </li>
@@ -430,7 +432,9 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<p><a href="https://nntrn.github.io/dell-workbook/03floats/">https://nntrn.github.io/dell-workbook/03floats/</a></p>
+</li>
+</ul>
+<p><a href="https://nntrn.github.io/dell-workbook/03floats/">nntrn.github.io/dell-workbook/03floats/</a></p>
 <h2 class="mume-header" id="requirements">requirements</h2>
 
 <ul>
@@ -530,7 +534,7 @@ code.language-yaml {
 </pre><hr>
 <h2 class="mume-header" id="additional">additional</h2>
 
-<h3 class="mume-header" id="add-gradient-to-background">add gradient to background</h3>
+<h2 class="mume-header" id="add-gradient-to-background">add gradient to background</h2>
 
 <p>this code layers on top of the section background to add a gradient. <code>z-index</code> of <code>section:before</code> needs to be greater than <code>&lt;section&gt;</code></p>
 <pre data-role="codeBlock" data-info="CSS" class="language-css"><span class="token selector">section<span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span>

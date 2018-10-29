@@ -1,39 +1,37 @@
-assignment 3: floats
----
+# assignment 3: floats
 
-- [requirements](#requirements)
-- [setting up](#setting-up)
-- [making the header](#making-the-header)
-  - [logo](#logo)
-  - [navigation](#navigation)
-    - [displaying the icons](#displaying-the-icons)
-- [create section](#create-section)
-- [.content](#content)
-- [additional](#additional)
-  - [add gradient to background](#add-gradient-to-background)
-  - [responsive page design](#responsive-page-design)
-- [base](#base)
-  - [HTML](#html)
-  - [CSS](#css)
+* [assignment 3: floats](#assignment-3-floats)
+  * [requirements](#requirements)
+  * [setting up](#setting-up)
+  * [making the header](#making-the-header)
+    * [logo](#logo)
+    * [navigation](#navigation)
+      * [displaying the icons](#displaying-the-icons)
+  * [create section](#create-section)
+  * [.content](#content)
+  * [additional](#additional)
+  * [add gradient to background](#add-gradient-to-background)
+    * [responsive page design](#responsive-page-design)
+  * [base](#base)
+    * [HTML](#html)
+    * [CSS](#css)
 
-https://nntrn.github.io/dell-workbook/03floats/
-
+[nntrn.github.io/dell-workbook/03floats/](https://nntrn.github.io/dell-workbook/03floats/)
 
 ## requirements
+
 * Replicate the site below, use HTML and CSS.
 * Do not use the ID tag attribute. Hint: Stay classy `<p class="my-paragraph">...</p>`
 * Write your CSS in top to bottom fashion as much as possible. Hint: Target elements in your CSS file in the order they appear in your HTML Document.
 * Make images responsive using CSS. Hint: set image width: 100% and height: auto.
-* Feel free to use a Google Fonts to try and match the font. 
+* Feel free to use a Google Fonts to try and match the font.
 * Tutorial HTML markup completion. At least 95% of the complete HTML Document must be written.
-* Bonus: Use actual input form elements for the fields 
-
+* Bonus: Use actual input form elements for the fields
 
 ## setting up
 
-* [normalize.css](https://necolas.github.io/normalize.css/):  render all elements more consistently 
+* [normalize.css](https://necolas.github.io/normalize.css/):  render all elements more consistently
 * [roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,500): google font (font-weight: 400 and 500)
-
 
 ## making the header
 
@@ -55,6 +53,7 @@ the first level elements in `<header>` are `<div>` and `<nav>` - we want the div
 ```
 
 ### navigation
+
 i used a list to hold the navigation links:
 
 * remove all padding and margin in `ul`
@@ -82,7 +81,8 @@ i used a list to hold the navigation links:
 ```
 
 #### displaying the icons
-* i display the nav icons using the `:before` selector 
+
+* i display the nav icons using the `:before` selector
 * `.navigation *:before{..}` this styles ALL the nav icons
 
 ```CSS
@@ -116,10 +116,9 @@ section {
 
 `background-size: 100% 100%;` makes the background-image responsive
   
-
 ## .content
 
-this block holds the tabbed buttons 
+this block holds the tabbed buttons
 
 ```HTML
 <div class="content">
@@ -137,12 +136,11 @@ this block holds the tabbed buttons
 </div>
 ```
 
-
 ---
 
 ## additional
 
-### add gradient to background
+## add gradient to background
 
 this code layers on top of the section background to add a gradient. `z-index` of `section:before` needs to be greater than `<section>`
 
@@ -178,19 +176,20 @@ section:before {
   }
 }
 ```
-`@media` query explained:
-* the first style, `nav li, .navigation` will make the navigation horizontal with a slightly bigger font
-* the second, `input[type="date"], input[type="text"], select` will make stack the input elements stack on top of each other 
 
+`@media` query explained:
+
+* the first style, `nav li, .navigation` will make the navigation horizontal with a slightly bigger font
+* the second, `input[type="date"], input[type="text"], select` will make stack the input elements stack on top of each other
 
 > note: `@media (max-width: 480px)` is NOT designing for [mobile first](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
-
 
 ---
 
 ## base
 
 ### HTML
+
 ```HTML
 <body>
   <header>
@@ -218,6 +217,7 @@ section:before {
 ```
 
 ### CSS
+
 ```CSS
 /* Base Styles
 *****************************  */
@@ -270,4 +270,3 @@ label {}
 /* For devices smaller than 500px - note this is not mobile design first */
 @media (max-width: 500px) {}
 ```
-
