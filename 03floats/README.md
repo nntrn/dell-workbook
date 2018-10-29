@@ -2,9 +2,22 @@ assignment 3: floats
 ---
 
 - [requirements](#requirements)
-  - [responsive](#responsive)
+- [setting up](#setting-up)
+- [making the header](#making-the-header)
+  - [logo](#logo)
+  - [navigation](#navigation)
+    - [displaying the icons](#displaying-the-icons)
+- [create section](#create-section)
+- [.content](#content)
+- [additional](#additional)
+  - [add gradient to background](#add-gradient-to-background)
+  - [responsive page design](#responsive-page-design)
+- [base](#base)
+  - [HTML](#html)
+  - [CSS](#css)
 
 https://nntrn.github.io/dell-workbook/03floats/
+
 
 ## requirements
 * Replicate the site below, use HTML and CSS.
@@ -15,26 +28,246 @@ https://nntrn.github.io/dell-workbook/03floats/
 * Tutorial HTML markup completion. At least 95% of the complete HTML Document must be written.
 * Bonus: Use actual input form elements for the fields 
 
-### responsive 
 
-this block of code makes sure 
+## setting up
+
+* [normalize.css](https://necolas.github.io/normalize.css/):  render all elements more consistently 
+* [roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,500): google font (font-weight: 400 and 500)
+
+
+## making the header
+
+``` HTML
+  <header>
+    <div class="website-logo"></div>
+    <nav></nav>
+  </header>
+```
+
+the first level elements in `<header>` are `<div>` and `<nav>` - we want the div block to display the website logo and the nav block to hold our links (to display them side by side, i used `float:left` )
+
+### logo
+
+```HTML
+<div class="website-logo">
+    <img src="img/logo.png">
+</div>
+```
+
+### navigation
+i used a list to hold the navigation links:
+
+* remove all padding and margin in `ul`
+* set `list-style-type:none` in `ul`
+* display the individual links as `inline-block` in the `li`
+
+```HTML
+<nav>
+  <ul class="navigation">
+
+    <li class="home">
+      <a href="#">home</a></li>
+
+    <li class="deals">
+      <a href="#">travel deals</a></li>
+
+    <li class="schedule">
+      <a href="#">flight schedule</a></li>
+
+    <li class="register">
+      <a href="#">register/login</a></li>
+
+  </ul>
+</nav>
+```
+
+#### displaying the icons
+* i display the nav icons using the `:before` selector 
+* `.navigation *:before{..}` this styles ALL the nav icons
+
+```CSS
+.navigation *:before { padding: .5rem;}
+
+.home:before { content: url(img/home-icon.png); }
+.deals:before { content: url(img/deal-icon.png); }
+.schedule:before { content: url(img/schedule-icon.png); }
+.register:before { content: url(img/login-icon.png); }
+```
+
+## create section
+
+```HTML
+<section>
+    <div class="content"></div>
+</section>
+```
+
+i made `<section>` the entire rest of the page after header
+
+``` CSS
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/airline.jpg);
+  background-size: 100% 100%;
+}
+```
+
+`background-size: 100% 100%;` makes the background-image responsive
+  
+
+## .content
+
+this block holds the tabbed buttons 
+
+```HTML
+<div class="content">
+
+  <div class="clearfix tabs">
+    <div class="tab plane"> </div>
+    <div class="tab hotel"> </div>
+    <div class="tab car"> </div>
+  </div>
+
+  <div class="page flights-page">
+    <form></form>
+  </div>
+
+</div>
+```
+
+
+---
+
+## additional
+
+### add gradient to background
+
+this code layers on top of the section background to add a gradient. `z-index` of `section:before` needs to be greater than `<section>`
+
+```CSS
+section:before {
+  position: absolute;
+  background: linear-gradient(to bottom, #0a2761, #0542b4, #a3d2f6);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: .7;
+  content: "";
+  z-index: 1;
+  mix-blend-mode: lighten;
+}
+```
+
+### responsive page design
+
 ```css
-@media (max-width: 480px) {
-    nav li {
-        display:block;
-        width: 100%;
-    }
+@media (max-width: 500px) {
+  nav li, .navigation {
+      display:block;
+      width: 100%;
+      font-size: 1.em;
+  }
 
-    nav .navigation li {
-        font-size: .9em;
-    }
+  input[type="date"], input[type="text"], select {
+      width: 100%;
+      display: table-row;
+      margin: .4rem 0;
+  }
+}
+```
+`@media` query explained:
+* the first style, `nav li, .navigation` will make the navigation horizontal with a slightly bigger font
+* the second, `input[type="date"], input[type="text"], select` will make stack the input elements stack on top of each other 
 
-    input[type="date"], input[type="text"], select {
-        width: 100%;
-        display: table-row;
-        margin: .4rem 0;
-    }
+
+> note: `@media (max-width: 480px)` is NOT designing for [mobile first](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
+
+
+---
+
+## base
+
+### HTML
+```HTML
+<body>
+  <header>
+    <div class="website-logo"></div>
+    <nav></nav>
+  </header>
+  <section>
+
+    <div class="content">
+
+      <div class="clearfix tabs">
+        <div class="tab plane"> </div>
+        <div class="tab hotel"> </div>
+        <div class="tab car"> </div>
+      </div>
+
+      <div class="page flights-page">
+        <form></form>
+      </div>
+
+    </div>
+
+  </section>
+</body>
+```
+
+### CSS
+```CSS
+/* Base Styles
+*****************************  */
+
+* {
+    box-sizing: border-box;
+    outline: 0;
 }
 
+/* Typography
+*****************************  */
+a {}
+a:hover {}
+
+/* Layout
+*****************************  */
+
+header {}
+nav {}
+section {}
+
+
+/* Forms
+*****************************  */
+fieldset {}
+form {}
+select {}
+input[type="date"] {}
+input[type="text"] {}
+input[type="checkbox"] {}
+input[type="radio"] {}
+input[type="button"] {}
+input[type="submit"] {}
+label {}
+
+
+/* clearfix
+*****************************  */
+.clearfix:after,
+.clearfix:before {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after { clear: both; }
+
+
+/* Media Queries
+*****************************  */
+/* For devices smaller than 500px - note this is not mobile design first */
+@media (max-width: 500px) {}
 ```
-> note: `@media (max-width: 480px)` is NOT designing for [mobile first](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
+

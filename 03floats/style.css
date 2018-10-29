@@ -112,7 +112,6 @@ section {
   height: 100%;
   background-image: url(img/airline.jpg);
   background-size: 100% 100%;
-  float: left;
 }
 
 .content {
@@ -294,7 +293,7 @@ label {
   nav li, .navigation {
       display:block;
       width: 100%;
-      font-size: 1.em;
+      font-size: 1.1em;
   }
 
   input[type="date"], input[type="text"], select {
@@ -303,7 +302,4 @@ label {
       margin: .4rem 0;
   }
 
-  .content {
-      max-height: 20%;
-  }
 }
