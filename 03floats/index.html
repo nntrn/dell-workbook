@@ -48,18 +48,22 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
 
 
       <div class="clearfix tabs">
-        <div class="tab plane"><img src="img/plane-icon.png"></li>
+        
+        <div class="tab plane" > <input type="button">
+          <!-- <img src="img/plane-icon.png"> -->
         </div>
-        <div class="tab hotel"><img src="img/hotel-icon.png"></li>
+        <div class="tab hotel"> <input type="button">
+          <!-- <img src="img/hotel-icon.png"> -->
         </div>
-        <div class="tab car"><img src="img/car-icon.png"></li>
+        <div class="tab car"> <input type="button" >
+          <!-- <img src="img/car-icon.png"> -->
         </div>
 
       </div>
 
       <div class="page flights-page">
         <form>
-          <p>
+          <p class="no-label">
             <label for="text">depart</label>
             <input id="text" type="text" placeholder="depart">
 
@@ -68,7 +72,7 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
           </p>
 
 
-          <p>
+          <p class="no-label">
             <label for="date">Date</label>
             <input id="date" type="date">
 
@@ -79,19 +83,21 @@ HTML markup completion. At least 95% of the complete HTML Document must be writt
         </form>
 
         <p>
-          <label for="select">Select</label>
+          <label for="select">Passengers</label>
           <select id="select">
-            <option>Option One</option>
-            <option>Option Two</option>
-            <option>Option Three</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
           </select>
 
           <label for="radio1">
             <input id="radio1" name="radio" type="radio" class="radio" checked="checked">
-            Option 1</label>
+            Return</label>
           <label for="radio2">
-            <input id="radio2" name="radio" type="radio" class="radio"> Option
-            2</label>
+            <input id="radio2" name="radio" type="radio" class="radio"> One way</label>
 
         </p>
 
