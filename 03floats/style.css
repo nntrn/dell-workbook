@@ -1,15 +1,33 @@
-html {
-  font-size: 1.25em;
-}
 
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 * {
   box-sizing: border-box;
+  outline:0;
+}
+
+html {
+  font-size: 1.25em;
 }
 
 body {
   background: #ededee;
   font-family: Roboto, arial, sans-serif;
 }
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: #ecebeb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3D9970;
+}
+
+
+
 
 .clearfix:after,.clearfix:before {
   content: " ";
@@ -162,23 +180,38 @@ section {
 
 .page{padding:10px;}
 
-/* STYELES */
-a {
-  color: #ecebeb;
-  text-decoration: none;
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+input{padding:.35rem;
 }
 
-a:hover {
-  color: #3D9970;
+input[type="date"],
+input[type="text"]{
+background: transparent;
+margin:.2rem;
+display:table-cell;
+width:40%;
+color: white;
+
+
 }
 
-/* 
-@media screen and (min-width: 1400px) {
-html {
-font-size: 1.25em;
+
+
+label{
+  display:none;
 }
-}
-*/
+
+
+
+
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 /* For devices larger than 400px */
 @media (max-width: 500px) {
   nav {
