@@ -1,46 +1,46 @@
 @keyframes glow {
   to {
-      box-shadow: 0 10px 10px white;
+    box-shadow: 0 10px 10px white;
   }
 
   from {
-      box-shadow: 0 10px 0px transparent;
+    box-shadow: 0 10px 0px transparent;
   }
 }
 
 @keyframes twinkle {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
 
   50% {
-      opacity: .5;
+    opacity: .5;
   }
 
   100% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
 @-webkit-keyframes rotation {
   from {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   to {
-      -webkit-transform: rotate(359deg);
-      transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
   }
 }
 
 @keyframes move-map {
   0% {
-      background-position: -849px 0;
+    background-position: -849px 0;
   }
 
   100% {
-      background-position: 0 0;
+    background-position: 0 0;
   }
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .core {
-  background: radial-gradient(circle , #FFE000, #FCC419);
+  background: radial-gradient(circle, #FFE000, #FCC419);
   box-shadow: 0 0 10px 3px rgba(255, 152, 0, 0.76), inset 0 0 20px 4px #f13e0070, 0 0 10px 5px rgba(109, 76, 2, 0.84);
   border-radius: 70%;
   display: inline-grid;
@@ -226,7 +226,7 @@ body {
 }
 
 .planet.saturn:before {
-  opacity: 1!important;
+  opacity: 1 !important;
   content: ".";
   color: rgba(16, 33, 85, 0.97);
   position: absolute;
@@ -253,7 +253,7 @@ body {
 }
 
 .planet.uranus:before {
-  opacity: 1!important;
+  opacity: 1 !important;
   content: ".";
   color: rgba(16, 33, 85, 0.97);
   position: absolute;
@@ -307,7 +307,7 @@ body {
   padding: .4%;
 }
 
-.pluto:hover > .crust {
+.pluto:hover>.crust {
   content: "a";
   background: url('../resources/pizza.svg');
   background-origin: border-box;
@@ -315,12 +315,12 @@ body {
   filter: saturate(1.1);
 }
 
-.pluto > .crust * < .core {
+.pluto>.crust * < .core {
   mix-blend-mode: hue;
 }
 
 .pluto .core {
-  opacity:.1;
+  opacity: .1;
 }
 
 .stars {
@@ -365,6 +365,6 @@ body {
   position: fixed;
 }
 
-.crust > * {
+.crust>* {
   opacity: 1;
 }
