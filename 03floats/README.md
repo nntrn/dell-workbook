@@ -1,22 +1,21 @@
 # assignment 3: floats
 
-* [assignment 3: floats](#assignment-3-floats)
-  * [requirements](#requirements)
-  * [setting up](#setting-up)
-  * [making the header](#making-the-header)
-    * [logo](#logo)
-    * [navigation](#navigation)
-    * [display nav icons](#display-nav-icons)
-      * [using content](#using-content)
-      * [using fontawesome](#using-fontawesome)
-  * [create \<section>](#create-section)
-  * [div .content](#div-content)
-  * [additional](#additional)
-    * [add gradient to background](#add-gradient-to-background)
-    * [responsive page design](#responsive-page-design)
-  * [base](#base)
-    * [HTML](#html)
-    * [CSS](#css)
+* [requirements](#requirements)
+* [setting up](#setting-up)
+* [making the header](#making-the-header)
+  * [logo](#logo)
+  * [navigation](#navigation)
+  * [display nav icons](#display-nav-icons)
+    * [using content](#using-content)
+    * [using fontawesome](#using-fontawesome)
+* [create \<section>](#create-section)
+* [div .content](#div-content)
+* [additional](#additional)
+  * [add gradient to background](#add-gradient-to-background)
+  * [responsive page design](#responsive-page-design)
+* [base](#base)
+  * [HTML](#html)
+  * [CSS](#css)
 
 ## requirements
 
@@ -35,13 +34,6 @@
 * [roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,500): google font (font-weight: 400 and 500)
 
 ## making the header
-
-``` HTML
-  <header>
-    <div class="website-logo"></div>
-    <nav></nav>
-  </header>
-```
 
 the first level elements in `<header>` are `<div>` and `<nav>` - we want the div block to display the website logo and the nav block to hold our links (to display them side by side, i used `float:left` )
 
@@ -102,7 +94,7 @@ i used a list to hold the navigation links:
 .register:before { content: url(img/login-icon.png); }
 ```
 
-> another way to do this would be using `background-image` but doing this requires an additional line of code `content: "";` 
+> another way to do this would be using `background-image` but doing this requires an additional line of code `content: "";`
 
 #### using fontawesome
 

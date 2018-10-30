@@ -33,7 +33,6 @@
       </div>
     </div>
 
-
     <div class="planet earth" tag="earth" name="eager">
       <div class="continents"></div>
       <div class="crust">
@@ -45,81 +44,83 @@
       </div>
     </div>
 
-
-      <div class="planet mars" tag="mars" name="mom">
-        <div class="crust">
-          <div class="mantle">
-            <div class="core">
-              <div class="planet-2d"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="planet jupiter" tag="jupiter" name="just">
-        <div class="crust">
-          <div class="mantle">
-            <div class="core">
-              <div class="planet-2d"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="planet saturn" tag="saturn" name="served">
-        <div class="crust">
-          <div class="mantle">
-            <div class="core">
-              <div class="planet-2d"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="planet uranus" tag="uranus" name="us">
-        <div class="crust">
-          <div class="mantle">
-            <div class="core">
-              <div class="planet-2d"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="planet neptune" tag="neptune" name="nine">
-        <div class="crust">
-          <div class="mantle">
-            <div class="core">
-              <div class="planet-2d"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="planet pluto" tag="pluto" name="pizzas">
-        <div class="crust">
-          <div class="mantle">
-            <div class="core">
-              <div class="planet-2d"></div>
-            </div>
+    <div class="planet mars" tag="mars" name="mom">
+      <div class="crust">
+        <div class="mantle">
+          <div class="core">
+            <div class="planet-2d"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="jquery.js"></script>
-    <script>
+
+    <div class="planet jupiter" tag="jupiter" name="just">
+      <div class="crust">
+        <div class="mantle">
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="planet saturn" tag="saturn" name="served">
+      <div class="crust">
+        <div class="mantle">
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="planet uranus" tag="uranus" name="us">
+      <div class="crust">
+        <div class="mantle">
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="planet neptune" tag="neptune" name="nine">
+      <div class="crust">
+        <div class="mantle">
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="planet pluto" tag="pluto" name="pizzas">
+      <div class="crust">
+        <div class="mantle">
+          <div class="core">
+            <div class="planet-2d"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="jquery.js"></script>
+  <script>
     stars = "";
 
     for (i = 0; i < 800; i++) {
 
-      var type = Math.round(Math.random() * 2); // 0 1 2
+      var type = Math.round(Math.random() * 2);
       var numStars = Math.floor(Math.random() * 800);
-      stars += "<div class='stars star"+type +"' style='margin-left:" + numStars*1.23 + "px; margin-bottom: " + Math.random() * 1 + "%'></div>";
+      stars += "<div class='stars star" + type + "' style='margin-left:" +
+        numStars * 1.23 + "px; margin-bottom: " + Math.random() * 1 +
+        "%'></div>";
     }
     document.getElementById("starrysky").innerHTML = stars;
-    </script>
+  </script>
 
 </body>
 
