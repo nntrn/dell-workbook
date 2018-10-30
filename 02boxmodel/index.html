@@ -110,14 +110,10 @@
   <script src="jquery.js"></script>
   <script>
     stars = "";
-
-    for (i = 0; i < 800; i++) {
-
+    for (i = 0; i <= 800; i++) {
       var type = Math.round(Math.random() * 2);
       var numStars = Math.floor(Math.random() * 800);
-      stars += "<div class='stars star" + type + "' style='margin-left:" +
-        numStars * 1.23 + "px; margin-bottom: " + Math.random() * 1 +
-        "%'></div>";
+      stars += "<div class='stars star" + type + "' style='margin-left:" + numStars * 1.23 + "px; margin-bottom: " + Math.random() * 1 + "%'></div>";
     }
     document.getElementById("starrysky").innerHTML = stars;
   </script>
