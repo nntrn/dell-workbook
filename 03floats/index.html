@@ -4,6 +4,7 @@
   <title>UX ATLANTIC</title>
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="../resources/CSS/normalize.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -19,10 +20,10 @@
 
     <nav>
       <ul class="navigation">
-        <li class="home selected"><a href="#">home</a></li>
-        <li class="deals"><a href="#">travel deals</a></li>
-        <li class="schedule"><a href="#">flight schedule</a></li>
-        <li class="register"><a href="#">register/login</a></li>
+        <li class="fa-home"><a href="#">home</a></li>
+        <li class="fa-plane"><a href="#">travel deals</a></li>
+        <li class="fa-calendar"><a href="#">flight schedule</a></li>
+        <li class="fa-sign-in"><a href="#">register/login</a></li>
       </ul>
     </nav>
 
@@ -45,10 +46,10 @@
           <fieldset>
             <p class="no-label">
               <label for="text">depart</label>
-              <input id="text" type="text" placeholder="depart">
+              <input id="text" type="text" placeholder="depart" maxlength="3">
 
               <label for="text">arrive</label>
-              <input id="text" type="text" placeholder="arrive">
+              <input id="text" type="text" placeholder="arrive" maxlength="3">
             </p>
 
             <p class="no-label">

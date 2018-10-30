@@ -228,6 +228,16 @@ code.language-yaml {
 .markdown-preview.markdown-preview pre[class*="language-"] {
   white-space: pre-wrap;
 }
+.markdown-preview.markdown-preview pre:before {
+  content: attr(data-info);
+  display: table;
+  background: #444;
+  color: #fff;
+  font-size: .8em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding: 2px 4px!important;
+}
 .markdown-preview.markdown-preview img {
   max-width: 100%;
   max-height: 100%;
@@ -335,16 +345,6 @@ code.language-yaml {
 .markdown-preview.markdown-preview blockquote p:last-of-type {
   margin-bottom: 0;
 }
-.markdown-preview.markdown-preview blockquote cite {
-  display: block;
-  margin-top: 1rem;
-  text-align: right;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-.markdown-preview.markdown-preview blockquote.testimonial {
-  padding-left: 0;
-  border-left: 0;
-}
 .markdown-preview.markdown-preview blockquote.alert {
   background: #ffd9e0;
   border-left: 12px solid #ff4a6e;
@@ -369,6 +369,11 @@ code.language-yaml {
 .markdown-preview.markdown-preview blockquote code {
   margin: 1rem 0 0;
   background: white;
+}
+.markdown-preview.markdown-preview blockquote pre {
+  margin: 10px 0px;
+  background: rgba(250, 250, 250, 0.9) !important;
+  border-radius: 0px;
 }
 .markdown-preview.markdown-preview code[class*="language-"],
 .markdown-preview.markdown-preview pre[class*="language-"] {
@@ -410,18 +415,20 @@ code.language-yaml {
 <li><a href="#making-the-header">making the header</a>
 <ul>
 <li><a href="#logo">logo</a></li>
-<li><a href="#navigation">navigation</a>
+<li><a href="#navigation">navigation</a></li>
+<li><a href="#display-nav-icons">display nav icons</a>
 <ul>
-<li><a href="#displaying-the-icons">displaying the icons</a></li>
+<li><a href="#using-content">using content</a></li>
+<li><a href="#using-fontawesome">using fontawesome</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#create-section">create section</a></li>
-<li><a href="#content">.content</a></li>
-<li><a href="#additional">additional</a></li>
-<li><a href="#add-gradient-to-background">add gradient to background</a>
+<li><a href="#create-section">create &lt;section&gt;</a></li>
+<li><a href="#div-content">div .content</a></li>
+<li><a href="#additional">additional</a>
 <ul>
+<li><a href="#add-gradient-to-background">add gradient to background</a></li>
 <li><a href="#responsive-page-design">responsive page design</a></li>
 </ul>
 </li>
@@ -434,7 +441,6 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<p><a href="https://nntrn.github.io/dell-workbook/03floats/">nntrn.github.io/dell-workbook/03floats/</a></p>
 <h2 class="mume-header" id="requirements">requirements</h2>
 
 <ul>
@@ -449,6 +455,7 @@ code.language-yaml {
 <h2 class="mume-header" id="setting-up">setting up</h2>
 
 <ul>
+<li><a href="https://fontawesome.com/v4.7.0/icons/">fontawesome.css</a></li>
 <li><a href="https://necolas.github.io/normalize.css/">normalize.css</a>:  render all elements more consistently</li>
 <li><a href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,500">roboto</a>: google font (font-weight: 400 and 500)</li>
 </ul>
@@ -459,7 +466,9 @@ code.language-yaml {
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
 </pre><p>the first level elements in <code>&lt;header&gt;</code> are <code>&lt;div&gt;</code> and <code>&lt;nav&gt;</code> - we want the div block to display the website logo and the nav block to hold our links (to display them side by side, i used <code>float:left</code> )</p>
-<h3 class="mume-header" id="logo">logo</h3>
+<pre data-role="codeBlock" data-info="CSS" class="language-css"><span class="token selector"><span class="token class">.website-logo</span> </span><span class="token punctuation">{</span> <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">nav </span><span class="token punctuation">{</span> <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="logo">logo</h3>
 
 <pre data-role="codeBlock" data-info="HTML" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>website-logo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>img/logo.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -489,7 +498,9 @@ code.language-yaml {
 
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
-</pre><h4 class="mume-header" id="displaying-the-icons">displaying the icons</h4>
+</pre><h3 class="mume-header" id="display-nav-icons">display nav icons</h3>
+
+<h4 class="mume-header" id="using-content">using content</h4>
 
 <ul>
 <li>i display the nav icons using the <code>:before</code> selector</li>
@@ -501,12 +512,37 @@ code.language-yaml {
 <span class="token selector"><span class="token class">.deals</span><span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span> <span class="token property">content</span><span class="token punctuation">:</span> <span class="token url">url(img/deal-icon.png)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token selector"><span class="token class">.schedule</span><span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span> <span class="token property">content</span><span class="token punctuation">:</span> <span class="token url">url(img/schedule-icon.png)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token selector"><span class="token class">.register</span><span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span> <span class="token property">content</span><span class="token punctuation">:</span> <span class="token url">url(img/login-icon.png)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="create-section">create section</h2>
+</pre><blockquote>
+<p>another way to do this would be using <code>background-image</code> but doing this requires an additional line of code <code>content: &quot;&quot;;</code></p>
+</blockquote>
+<h4 class="mume-header" id="using-fontawesome">using fontawesome</h4>
+
+<p>i&apos;m using <a href="https://fontawesome.com/v4.7.0/icons/">version 4.7</a></p>
+<pre data-role="codeBlock" data-info="CSS" class="language-css">&lt;nav&gt;
+  &lt;ul class=<span class="token string">&quot;navigation&quot;</span>&gt;
+    &lt;li class=<span class="token string">&quot;fa-home&quot;</span>&gt;&lt;a href=<span class="token string">&quot;#&quot;</span>&gt;home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=<span class="token string">&quot;fa-plane&quot;</span>&gt;&lt;a href=<span class="token string">&quot;#&quot;</span>&gt;travel deals&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=<span class="token string">&quot;fa-calendar&quot;</span>&gt;&lt;a href=<span class="token string">&quot;#&quot;</span>&gt;flight schedule&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=<span class="token string">&quot;fa-sign-in&quot;</span>&gt;&lt;a href=<span class="token string">&quot;#&quot;</span>&gt;register/login&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</pre><ul>
+<li><code>.fa-home</code> for home</li>
+<li><code>.fa-plane</code> for deals</li>
+<li><code>.fa-calendar</code> for schedule</li>
+<li><code>.fa-sign-in</code> for sign-in/register</li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> set the font for your <code>:before</code> selectors to  FontAwesome</p>
+<pre data-role="codeBlock" data-info="CSS" class="language-css"><span class="token selector"><span class="token class">.navigation</span> *<span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span><span class="token property">font-family</span><span class="token punctuation">:</span> FontAwesome<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</pre></blockquote>
+<p>v4.7 icon search tool at: <a href="https://faicons.com/">faicons.com</a></p>
+<h2 class="mume-header" id="create-section">create &lt;section&gt;</h2>
 
 <pre data-role="codeBlock" data-info="HTML" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
-</pre><p>i made <code>&lt;section&gt;</code> the entire rest of the page after header</p>
+</pre><p><code>&lt;section&gt;</code> is the entire rest of the page after header</p>
 <pre data-role="codeBlock" data-info="CSS" class="language-css"><span class="token selector">section </span><span class="token punctuation">{</span>
   <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
@@ -515,7 +551,7 @@ code.language-yaml {
   <span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span> <span class="token number">100%</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre><p><code>background-size: 100% 100%;</code> makes the background-image responsive</p>
-<h2 class="mume-header" id="content">.content</h2>
+<h2 class="mume-header" id="div-content">div .content</h2>
 
 <p>this block holds the tabbed buttons</p>
 <pre data-role="codeBlock" data-info="HTML" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -534,7 +570,7 @@ code.language-yaml {
 </pre><hr>
 <h2 class="mume-header" id="additional">additional</h2>
 
-<h2 class="mume-header" id="add-gradient-to-background">add gradient to background</h2>
+<h3 class="mume-header" id="add-gradient-to-background">add gradient to background</h3>
 
 <p>this code layers on top of the section background to add a gradient. <code>z-index</code> of <code>section:before</code> needs to be greater than <code>&lt;section&gt;</code></p>
 <pre data-role="codeBlock" data-info="CSS" class="language-css"><span class="token selector">section<span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span>

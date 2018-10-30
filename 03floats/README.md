@@ -6,17 +6,17 @@
   * [making the header](#making-the-header)
     * [logo](#logo)
     * [navigation](#navigation)
-      * [displaying the icons](#displaying-the-icons)
-  * [create section](#create-section)
-  * [.content](#content)
+    * [display nav icons](#display-nav-icons)
+      * [using content](#using-content)
+      * [using fontawesome](#using-fontawesome)
+  * [create \<section>](#create-section)
+  * [div .content](#div-content)
   * [additional](#additional)
-  * [add gradient to background](#add-gradient-to-background)
+    * [add gradient to background](#add-gradient-to-background)
     * [responsive page design](#responsive-page-design)
   * [base](#base)
     * [HTML](#html)
     * [CSS](#css)
-
-[nntrn.github.io/dell-workbook/03floats/](https://nntrn.github.io/dell-workbook/03floats/)
 
 ## requirements
 
@@ -30,6 +30,7 @@
 
 ## setting up
 
+* [fontawesome.css](https://fontawesome.com/v4.7.0/icons/)
 * [normalize.css](https://necolas.github.io/normalize.css/):  render all elements more consistently
 * [roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,500): google font (font-weight: 400 and 500)
 
@@ -43,6 +44,11 @@
 ```
 
 the first level elements in `<header>` are `<div>` and `<nav>` - we want the div block to display the website logo and the nav block to hold our links (to display them side by side, i used `float:left` )
+
+```CSS
+.website-logo { float: left;}
+nav { float: left; }
+```
 
 ### logo
 
@@ -80,7 +86,9 @@ i used a list to hold the navigation links:
 </nav>
 ```
 
-#### displaying the icons
+### display nav icons
+
+#### using content
 
 * i display the nav icons using the `:before` selector
 * `.navigation *:before{..}` this styles ALL the nav icons
@@ -94,7 +102,36 @@ i used a list to hold the navigation links:
 .register:before { content: url(img/login-icon.png); }
 ```
 
-## create section
+> another way to do this would be using `background-image` but doing this requires an additional line of code `content: "";` 
+
+#### using fontawesome
+
+i'm using [version 4.7](https://fontawesome.com/v4.7.0/icons/)
+
+```CSS
+<nav>
+  <ul class="navigation">
+    <li class="fa-home"><a href="#">home</a></li>
+    <li class="fa-plane"><a href="#">travel deals</a></li>
+    <li class="fa-calendar"><a href="#">flight schedule</a></li>
+    <li class="fa-sign-in"><a href="#">register/login</a></li>
+  </ul>
+</nav>
+```
+
+* `.fa-home` for home
+* `.fa-plane` for deals
+* `.fa-calendar` for schedule
+* `.fa-sign-in` for sign-in/register
+
+> **NOTE:** set the font for your `:before` selectors to  FontAwesome
+> ```CSS
+> .navigation *:before {font-family: FontAwesome; }
+> ```
+
+v4.7 icon search tool at: [faicons.com](https://faicons.com/)
+
+## create \<section>
 
 ```HTML
 <section>
@@ -102,7 +139,7 @@ i used a list to hold the navigation links:
 </section>
 ```
 
-i made `<section>` the entire rest of the page after header
+`<section>` is the entire rest of the page after header
 
 ``` CSS
 section {
@@ -116,7 +153,7 @@ section {
 
 `background-size: 100% 100%;` makes the background-image responsive
   
-## .content
+## div .content
 
 this block holds the tabbed buttons
 
@@ -140,7 +177,7 @@ this block holds the tabbed buttons
 
 ## additional
 
-## add gradient to background
+### add gradient to background
 
 this code layers on top of the section background to add a gradient. `z-index` of `section:before` needs to be greater than `<section>`
 
