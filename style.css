@@ -1,39 +1,47 @@
-body {
+html(font-size:130%) body {
   counter-reset: my-counter;
+  width: 80%;
 }
 
-#greetings h1 {
-  margin: 1rem 0px;
+* {
+  font-family: monospace;
+  outline: 0;
+  box-sizing: border-box;
 }
 
-#greetings {
-  width: 340px;
-  height: 340px;
-  border: 0px solid #f0f1f4;
-  padding: 10px;
-  position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-  display: table-cell;
-  margin: auto;
-  background: #fff;
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100px;
 }
 
 .hello {
   white-space: pre-line;
-  display: table-cell;
-  width: 30%;
+  font-weight: bold;
   background: #fff;
   border: 4px solid #fff;
   vertical-align: bottom;
+  font-size: 1.12em;
+  background: #211e1e;
+  background-image: linear-gradient(to right, #000, #211e1e, #04175f);
+  background-size: 400% 400%;
+  color: white;
+  animation: Gradient 25s linear infinite;
 }
 
 .content {
-  width: 70%;
-  display: table-cell;
-  padding: 5px 0px;
+  text-transform: uppercase;
+  padding: .94rem 0px;
+  font-size: 1.42em;
   vertical-align: bottom;
+  line-height: 1.8rem;
+}
+
+a:visited,
+a {
+  color: #03020a;
 }
 
 a {
@@ -51,5 +59,47 @@ a {
 
 .content a:hover {
   color: black;
-  background: #ddd;
+  background: #eee;
+  font-style: italic;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+
+.hello {
+  position: relative;
+  z-index: 2;
+}
+
+.popup-menu {
+  width: 30%;
+  right: 0;
+  background: #FF5722;
+  height: 0%;
+  color: white;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+  position: absolute;
+  transition: height 300ms ease;
+}
+
+.hello:hover>.popup-menu,
+.hello:focus>.popup-menu,
+.hello:focus-within>.popup-menu {
+  visibility: visible;
+  height: 27%;
 }
