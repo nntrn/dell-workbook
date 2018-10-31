@@ -1,23 +1,8 @@
 # assignment 3: floats
 
-* [requirements](#requirements)
-* [setting up](#setting-up)
-* [making the header](#making-the-header)
-  * [logo](#logo)
-  * [navigation](#navigation)
-  * [display nav icons](#display-nav-icons)
-    * [using content](#using-content)
-    * [using fontawesome](#using-fontawesome)
-* [create \<section>](#create-section)
-* [div .content](#div-content)
-* [additional](#additional)
-  * [add gradient to background](#add-gradient-to-background)
-  * [responsive page design](#responsive-page-design)
-* [base](#base)
-  * [HTML](#html)
-  * [CSS](#css)
+view my project [here](https://nntrn.github.io/dell-workbook/03floats/)
 
-## requirements
+requirements:
 
 * Replicate the site below, use HTML and CSS.
 * Do not use the ID tag attribute. Hint: Stay classy `<p class="my-paragraph">...</p>`
@@ -27,15 +12,41 @@
 * Tutorial HTML markup completion. At least 95% of the complete HTML Document must be written.
 * Bonus: Use actual input form elements for the fields
 
+---
+
+* [setting up](#setting-up)
+* [making the header](#making-the-header)
+  * [logo](#logo)
+  * [navigation](#navigation)
+  * [display nav icons](#display-nav-icons)
+    * [using an image file](#using-an-image-file)
+    * [using a webfont](#using-a-webfont)
+* [create \<section>](#create-section)
+* [div .content](#div-content)
+* [additional](#additional)
+  * [add gradient to background](#add-gradient-to-background)
+  * [responsive page design](#responsive-page-design)
+* [base](#base)
+  * [HTML](#html)
+  * [CSS](#css)
+
 ## setting up
 
-* [fontawesome.css](https://fontawesome.com/v4.7.0/icons/)
-* [normalize.css](https://necolas.github.io/normalize.css/):  render all elements more consistently
+```HTML
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+```
+
+* [fontawesome](https://fontawesome.com/v4.7.0/icons/) for displaying webicons
+* [normalize](https://necolas.github.io/normalize.css/):  render all elements more consistently
 * [roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,500): google font (font-weight: 400 and 500)
 
 ## making the header
 
-the first level elements in `<header>` are `<div>` and `<nav>` - we want the div block to display the website logo and the nav block to hold our links (to display them side by side, i used `float:left` )
+the first level elements in `<header>` are `<div>` and `<nav>` - we want the div block to display the website logo and the nav block to hold our links (to display them side by side, i used `float:left`)
 
 ```CSS
 .website-logo { float: left;}
@@ -80,27 +91,27 @@ i used a list to hold the navigation links:
 
 ### display nav icons
 
-#### using content
+#### using an image file
 
-* i display the nav icons using the `:before` selector
-* `.navigation *:before{..}` this styles ALL the nav icons
+* i display the nav icons using the `::before` selector
+* `.navigation *::before{..}` this styles ALL the nav icons
 
 ```CSS
-.navigation *:before { padding: .5rem;}
+.navigation *::before { padding: .5rem;}
 
-.home:before { content: url(img/home-icon.png); }
-.deals:before { content: url(img/deal-icon.png); }
-.schedule:before { content: url(img/schedule-icon.png); }
-.register:before { content: url(img/login-icon.png); }
+.home::before { content: url(img/home-icon.png); }
+.deals::before { content: url(img/deal-icon.png); }
+.schedule::before { content: url(img/schedule-icon.png); }
+.register::before { content: url(img/login-icon.png); }
 ```
 
 > another way to do this would be using `background-image` but doing this requires an additional line of code `content: "";`
 
-#### using fontawesome
+#### using a webfont
 
-i'm using [version 4.7](https://fontawesome.com/v4.7.0/icons/)
+i'm using [font-awesome](https://fontawesome.com/v4.7.0/icons/) v4.7
 
-```CSS
+```HTML
 <nav>
   <ul class="navigation">
     <li class="fa-home"><a href="#">home</a></li>
@@ -116,9 +127,9 @@ i'm using [version 4.7](https://fontawesome.com/v4.7.0/icons/)
 * `.fa-calendar` for schedule
 * `.fa-sign-in` for sign-in/register
 
-> **NOTE:** set the font for your `:before` selectors to  FontAwesome
+> **NOTE:** set the font for your `::before` selectors to  FontAwesome
 > ```CSS
-> .navigation *:before {font-family: FontAwesome; }
+> .navigation *::before {font-family: FontAwesome; }
 > ```
 
 v4.7 icon search tool at: [faicons.com](https://faicons.com/)
@@ -147,7 +158,10 @@ section {
   
 ## div .content
 
-this block holds the tabbed buttons
+**`<div class="content">`**
+this block holds the tabbed buttons on top and form contorl inputs below
+
+i suppose i could have used `<article>` but i went with a `<div> + .class` instead
 
 ```HTML
 <div class="content">
@@ -165,16 +179,28 @@ this block holds the tabbed buttons
 </div>
 ```
 
+
+```CSS
+.content {
+  min-width: 40%;
+  max-height: 40%;
+  margin: 2rem;
+  position: absolute;
+  display: table;
+  z-index: 5;
+}
+```
+
 ---
 
 ## additional
 
 ### add gradient to background
 
-this code layers on top of the section background to add a gradient. `z-index` of `section:before` needs to be greater than `<section>`
+this code layers on top of the section background to add a gradient. `z-index` of `section::before` needs to be greater than `<section>`
 
 ```CSS
-section:before {
+section::before {
   position: absolute;
   background: linear-gradient(to bottom, #0a2761, #0542b4, #a3d2f6);
   top: 0;
@@ -211,7 +237,7 @@ section:before {
 * the first style, `nav li, .navigation` will make the navigation horizontal with a slightly bigger font
 * the second, `input[type="date"], input[type="text"], select` will make stack the input elements stack on top of each other
 
-> note: `@media (max-width: 480px)` is NOT designing for [mobile first](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
+> **NOTE**: `@media (max-width: 480px)` is NOT "[mobile first](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)" - instead of changing styles when the width gets smaller than 768px, *we should change the design when the width gets larger than 768px*
 
 ---
 
@@ -286,7 +312,7 @@ label {}
 /* clearfix
 *****************************  */
 .clearfix:after,
-.clearfix:before {
+.clearfix::before {
     content: " ";
     display: table;
 }
