@@ -22,7 +22,7 @@
   }
 }
 
-@-webkit-keyframes rotation {
+@keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -195,7 +195,7 @@ body {
   height: 100%;
   margin: 0;
   border-radius: 50%;
-  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   background: url('../resources/world-map.png') repeat-x;
   filter: invert(2) opacity(.74) saturate(10);
   background-size: auto 100%;
@@ -315,7 +315,7 @@ body {
   filter: saturate(1.1);
 }
 
-.pluto>.crust * < .core {
+.pluto>.crust * {
   mix-blend-mode: hue;
 }
 
