@@ -1,7 +1,8 @@
 /* 
-MARKDOWN HTML:
-https://nntrn.github.io/dell-workbook/03floats/README
+* assignment notes
+* https://nntrn.github.io/dell-workbook/03floats/README
 */
+
 /* Base Styles
 ******************************************************** */
 * {
@@ -135,14 +136,12 @@ section {
   border-top-left-radius: inherit;
 }
 
-
 .tab:hover input {
   box-shadow: inset 0 100px rgba(250, 250, 250, .2);
 }
 
 .page {
   padding: .5rem;
-
 }
 
 /* Forms
