@@ -2,15 +2,15 @@
 
 view my project [here](https://nntrn.github.io/dell-workbook/03floats/)
 
-requirements:
-
-* Replicate the site below, use HTML and CSS.
-* Do not use the ID tag attribute. Hint: Stay classy `<p class="my-paragraph">...</p>`
-* Write your CSS in top to bottom fashion as much as possible. Hint: Target elements in your CSS file in the order they appear in your HTML Document.
-* Make images responsive using CSS. Hint: set image width: 100% and height: auto.
-* Feel free to use a Google Fonts to try and match the font.
-* Tutorial HTML markup completion. At least 95% of the complete HTML Document must be written.
-* Bonus: Use actual input form elements for the fields
+> **requirements:**
+>
+> * Replicate the site below, use HTML and CSS.
+> * Do not use the ID tag attribute. Hint: Stay classy `<p class="my-paragraph">...</p>`
+> * Write your CSS in top to bottom fashion as much as possible. Hint: Target elements in your CSS file in the order they appear in your HTML Document.
+> * Make images responsive using CSS. Hint: set image width: 100% and height: auto.
+> * Feel free to use a Google Fonts to try and match the font.
+> * Tutorial HTML markup completion. At least 95% of the complete HTML Document must be written.
+> * Bonus: Use actual input form elements for the fields
 
 ---
 
@@ -21,7 +21,7 @@ requirements:
   * [display nav icons](#display-nav-icons)
     * [using an image file](#using-an-image-file)
     * [using a webfont](#using-a-webfont)
-* [create \<section>](#create-section)
+* [create section](#create-section)
 * [div .content](#div-content)
 * [additional](#additional)
   * [add gradient to background](#add-gradient-to-background)
@@ -134,7 +134,7 @@ i'm using [font-awesome](https://fontawesome.com/v4.7.0/icons/) v4.7
 
 v4.7 icon search tool at: [faicons.com](https://faicons.com/)
 
-## create \<section>
+## create section
 
 ```HTML
 <section>
