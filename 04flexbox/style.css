@@ -1,0 +1,107 @@
+/* 
+
+assignment 4
+When the width is at least 576px, it needs to look horizontal
+But when the width shrinks down under 576px, it needs to be vertical
+
+1. Do not use media queries for this, use flex and flex-wrap
+2. For the image url, you can use https://placeimg.com/640/480/any
+3. Make sure the content and image are centered and look good with padding, etc.
+
+*/
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 5%;
+  background: white;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  margin-top: 0em;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background: yellow;
+  flex-direction: row;
+  box-shadow: 2px 2px 7px 1px rgba(0,0,0,.75);
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3%;
+  border-radius: 7px;
+}
+
+img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  height: auto;
+    max-height: 275px;
+}
+
+.image {
+  background: red;
+  width: 100%;
+  flex: 1 180px ;
+
+  padding: 2%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 300px;
+  justify-content: space-between;
+}
+
+.section-title {
+  background: orange;
+  height: auto;
+  padding-top: 2%;
+}
+
+.section-title h1 {
+  margin: 0px;
+}
+
+.caption {
+  width: 100%;
+  max-height: 220px;
+  overflow: scroll;
+  max-width: 100%;
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2%;
+  flex: 1 300px;
+}
+
+.post-links {
+  border-top: 1px solid #f4f7fb;
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: green;
+  justify-content: space-between;
+  flex-basis: 2;
+  flex: 1;
+  padding-top: 2%;
+  margin-top:2%;
+}
+
+html {
+  background: #f4f7fb;
+}
+
+body *{
+  background: none!important;
+}
