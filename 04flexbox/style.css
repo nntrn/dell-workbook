@@ -10,13 +10,25 @@ But when the width shrinks down under 576px, it needs to be vertical
 
 */
 
-* {
-  box-sizing: border-box
+
+
+html {
+  background: #f4f7fb;
+  font-size:100%;
 }
 
 body {
   margin: 5%;
   background: white;
+}
+
+body * {
+  background: none !important;
+}
+
+
+* {
+  box-sizing: border-box
 }
 
 h1 {
@@ -74,7 +86,7 @@ img {
 .caption {
   width: 100%;
   max-height: 220px;
-  overflow: scroll;
+  overflow-y: scroll;
   max-width: 100%;
   background: lightblue;
   display: flex;
@@ -82,6 +94,7 @@ img {
   justify-content: space-between;
   padding: 2%;
   flex: 1 300px;
+  overflow-x: hidden;
 }
 
 .post-links {
@@ -98,10 +111,14 @@ img {
   margin-top: 2%;
 }
 
-html {
-  background: #f4f7fb;
+.caption::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: transparent; /* or add it to the track */
 }
 
-body * {
-  background: none !important;
+.caption::-webkit-scrollbar-thumb {
+    background: #152935; 
+    border-radius:10px;
+   
 }
