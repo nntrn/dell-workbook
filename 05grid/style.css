@@ -9,6 +9,8 @@
   color: #272d33;
 }
 
+*{overflow:auto!important}
+
 html {
   font-size: 100%;
 }
