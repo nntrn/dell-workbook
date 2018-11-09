@@ -3,10 +3,7 @@
 * FLEXBOX STYLESHEET
 ******************************************************** */
 :root {
-  --navy: #30588c;
-  --soft-gray: #f4f7fb;
-  --almost-black: #152935;
-  color: #272d33;
+  --navy: #30588c; --soft-gray: #f4f7fb; --almost-black: #152935; color: #272d33;
 }
 
 html {
@@ -19,12 +16,7 @@ h1 {
   margin-top: 0em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--almost-black);
 }
 
@@ -44,8 +36,7 @@ h6 {
 img {
   display: flex;
   height: 100%;
-  width: 100%;
-  max-width: 200px;
+  width: 80vw;
 }
 
 .image {
@@ -53,7 +44,8 @@ img {
   flex: 1 200px;
   padding: 3%;
   display: flex;
-  max-height: 40%;
+  min-height: 40%;
+  min-width: 50%;
   justify-content: center;
 }
 
@@ -118,8 +110,7 @@ a {
 .post-links a {
   background: #eaeef2;
   border-radius: 15px;
-  ;
-  padding: 1% 2%;
+  ; padding: 1% 2%;
   align-items: center;
   white-space: pre;
   display: table;
@@ -132,10 +123,6 @@ a {
 
 .post-links div:hover a {
   color: var(--navy);
-}
-
-div {
-  overflow: scroll;
 }
 
 /*****************************************************
@@ -199,15 +186,6 @@ div[class^="grid-"]:hover {
   box-shadow: 0 0 4px 2px #dfe3e66e;
 }
 
-div[class^="grid-"] img {
-  filter: opacity(0);
-  background-clip: content-box;
-}
-
-.image {
-  box-shadow: inset -3px 0px 0 2px white, inset 0 0 0 1000px #dfe3e6;
-}
-
 .half {
   grid-column: 2 span;
 }
@@ -222,16 +200,9 @@ div[class^="grid-"] img {
   height: 100%;
 }
 
-.square img,
-.square .image {
-  min-height: 60%;
-  min-width: 100%;
-  align-items: center;
+.square img {
 }
 
-.square .caption {
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  overflow-y: scroll;
+.square .image {
+  zoom:2; padding: 0%;
 }
