@@ -11,136 +11,135 @@ But when the width shrinks down under 576px, it needs to be vertical
 */
 
 html {
-    background: #f4f7fb;
-    font-size: 100%;
-  }
-  
-  body {
-    margin: 5%;
-    background: white;
-  }
-  
-  * {
-    box-sizing: border-box
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-    margin-top: 0em;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #152935;
-  }
-  
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, .75);
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 3%;
-    border-radius: 7px;
-  }
-  
-  img {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    height: auto;
-    max-height: 275px;
-  }
-  
-  .image {
-    width: 100%;
-    flex: 1 180px;
-    padding: 2%;
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-    flex: 1 300px;
-    justify-content: space-between;
-  }
-  
-  .section-title {
-    height: auto;
-    padding-top: 2%;
-  }
-  
-  .section-title h1 {
-    margin: 0px;
-  }
-  
-  .caption {
-    width: 100%;
-    max-height: 220px;
-    overflow-y: scroll;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2%;
-    flex: 1 300px;
-    overflow-x: hidden;
-  }
-  
-  .post-links {
-    border-top: 1px solid #dfe3e6;
-    display: flex;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-basis: 2;
-    flex: 1;
-    padding-top: 2%;
-    margin-top: 2%;
-  }
-  
-  .caption::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-    background-color: transparent;
-  }
-  
-  .caption::-webkit-scrollbar-thumb {
-    background: #152935;
-    border-radius: 10px;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .post-links div {
-  
-    background: #f4f7fb;
-    border: 0px solid rgba(223, 227, 230, 0.35);
-    border-radius: 7px;
-    padding: 0 3%;
-    white-space: pre;
-  }
-  
-  .post-links a {
-    color: rgba(136, 151, 162, 0.75);
-    transition: color 300ms ease-in;
-    font-size: .85rem;
-    width: 100%;
-  
-  }
-  
-  .post-links a:hover {
-    color: #30588c
-  }
-  
+  background: #f4f7fb;
+  font-size: 100%;
+}
+
+body {
+  margin: 5%;
+  background: white;
+}
+
+* {
+  box-sizing: border-box
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  margin-top: 0em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #152935;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, .75);
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3%;
+  border-radius: 7px;
+}
+
+img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 275px;
+}
+
+.image {
+  width: 100%;
+  flex: 1 180px;
+  padding: 2%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 300px;
+  justify-content: space-between;
+}
+
+.section-title {
+  height: auto;
+  padding-top: 2%;
+}
+
+.section-title h1 {
+  margin: 0px;
+}
+
+.caption {
+  width: 100%;
+  max-height: 220px;
+  overflow-y: scroll;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2%;
+  flex: 1 300px;
+  overflow-x: hidden;
+}
+
+.post-links {
+  border-top: 1px solid #dfe3e6;
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-basis: 2;
+  flex: 1;
+  padding-top: 2%;
+  margin-top: 2%;
+}
+
+.caption::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: transparent;
+}
+
+.caption::-webkit-scrollbar-thumb {
+  background: #152935;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.post-links div {
+
+  background: #f4f7fb;
+  border: 0px solid rgba(223, 227, 230, 0.35);
+  border-radius: 7px;
+  padding: 0 3%;
+  white-space: pre;
+}
+
+.post-links a {
+  color: rgba(136, 151, 162, 0.75);
+  transition: color 300ms ease-in;
+  font-size: .85rem;
+  width: 100%;
+
+}
+
+.post-links a:hover {
+  color: #30588c
+}
