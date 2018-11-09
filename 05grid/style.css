@@ -9,8 +9,6 @@
   color: #272d33;
 }
 
-*{overflow:auto!important}
-
 html {
   font-size: 100%;
 }
@@ -169,6 +167,10 @@ height: 100vh; */
   height: 100%;
   grid-gap: .95rem;
   padding: 2%;
+}
+
+.css-grid *:not(.caption) {
+  overflow: hidden;
 }
 
 div[class^="grid-"] {
