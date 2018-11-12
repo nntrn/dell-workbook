@@ -7,7 +7,9 @@
   --blue-gray: #eaeef2;
   --almost-black: #152935;
   --red: #E74C3C;
+  --blue: #0055B8;
   --yellow: #F9E547;
+  --green: #5CB85C;
   --sans-serif: "Helvetica Neue", -apple-system, Helvetica, Roboto, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Arial, sans-serif;
 }
 
@@ -21,7 +23,7 @@ body {
 }
 
 a {
-  color: #0074d9;
+  color: var(--blue);
   text-decoration: none;
   word-wrap: break-word;
 }
@@ -29,6 +31,16 @@ a {
 .caption p {
   margin: 0;
   padding: 2% 0;
+}
+
+.fr.container {
+  height: 20vw !important;
+  overflow: scroll;
+
+}
+
+.fr.container .card .caption {
+  overflow: scroll;
 }
 
 header {
@@ -75,12 +87,13 @@ img:hover {
 .section-title {
   margin: 0;
   padding: 2% 0;
+  padding-top: 0;
 }
 
 .section-title h1 {
   margin: 0;
   padding: 0%;
-  color: var(--navy);
+  color: var(--blue);
   font-style: italic;
   font-family: var(--sans-serif);
   line-height: 110%;
@@ -111,11 +124,13 @@ img:hover {
   position: absolute !important;
   bottom: 0;
   left: 0;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(to left, white 0%, #edeff1 50%, white 100%);
+  border-image-slice: 1;
   background: white;
   width: 100%;
   padding: 1% .5%;
   text-transform: uppercase;
-  transition: transform 2900ms ease-in;
   border-radius: 8px;
 }
 
@@ -139,8 +154,7 @@ img:hover {
 .post-links>div:hover {
   color: var(--navy);
   transform: translate(0, -2px);
-  background: white;
-  border-color: white;
+  transition: transform 200ms ease-in;
 }
 
 .post-links>.likes {
@@ -151,11 +165,6 @@ img:hover {
 
 .post-links .likes a {
   color: var(--red);
-  background: white;
-}
-
-.post-links .likes a:hover {
-  background: #f8f8f8;
 }
 
 .post-links .read-more a {
@@ -188,16 +197,18 @@ a[data-readmore-toggle] {
   content: "featured post";
   position: absolute;
   z-index: 2;
-  background: var(--yellow);
+  background: var(--green);
   font-family: var(--sans-serif);
-  font-size: .9em;
+  font-size: 1em;
   width: 100%;
   left: 0;
   top: 0;
+  color: white;
+  font-weight: bold;
 }
 
 .square .container {
-  border-color: var(--yellow);
+  border-color: var(--green);
   padding-top: 1.3em;
 }
 
