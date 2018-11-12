@@ -15,7 +15,7 @@ But when the width shrinks down under 576px, it needs to be vertical
   --gray: #e4e8ea;
   --almost-black: #152935;
   --red: #E74C3C;
-  --yellow:#F9E547;
+  --yellow: #F9E547;
   --sans-serif: "Helvetica Neue", -apple-system, Helvetica, Roboto, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Arial, sans-serif;
 }
 
@@ -32,7 +32,6 @@ body {
 * {
   box-sizing: border-box;
 }
-
 
 h1,
 h2,
@@ -95,6 +94,9 @@ img:hover {
 .section-title h1 {
   margin: 0;
   padding: 0 2%;
+  color: var(--navy);
+  font-weight: normal;
+  font-style: italic;
 }
 
 .caption {
@@ -147,12 +149,11 @@ a {
   justify-content: flex-start;
   background: transparent;
   align-items: flex-start;
-  font-size: inherit;
+  font-size: 1.1em;
   border: 2px solid transparent;
   font-family: var(--sans-serif);
   background: #eaeef2;
   border-radius: 5rem;
-  opacity: .6;
 }
 
 .post-links a {
