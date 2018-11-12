@@ -256,16 +256,12 @@ header h1:after {
   height: 100% !important;
 }
 
-.container {
-  overflow: scroll;
-}
-
 div[class^="grid-"],
 .post {
   position: relative;
 }
 
-.post .container .card * {
+.post .container .card .caption {
   overflow: scroll;
 }
 
