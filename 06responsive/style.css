@@ -286,10 +286,6 @@ div[class^="grid-"],
     margin-left: 1%;
   }
 
-  .post .container .card * {
-    overflow: scroll;
-  }
-
   .post .container {
     min-height: 25vw;
   }
