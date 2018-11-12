@@ -4,12 +4,11 @@
 <head>
   <title>responsive</title>
 
-  <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="../resources/CSS/normalize.css">
-  <link rel="stylesheet" type="text/css" href="../04flexbox/style.css" media="all">
+
   <link rel="stylesheet" type="text/css" href="style.css" media="all">
 
   <meta name="robots" content="index,follow">
@@ -21,35 +20,19 @@
   <meta name="og:title" content="dell-workbook" />
   <meta name="og:url" content="https://nntrn.github.io/dell-workbook/">
 
-  <meta name="description" content="responsive HTML layout using both CSS grid and flexboxes">
+  <meta name="description" content="responsive layout using grids and flexboxes">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <script>
-    $(document).ready(function(){
-      
-      var response;
-      $.ajax({ type: "GET",   
-      url: "https://nntrn.github.io/programming-notes/resources/lorem-ipsum.html",
-      async: false,
-      success : function(text)
-      {
-          response= text;
-      }
-  });
-
-  for (i = 1; i < 11; i++) {
-    $( ".grid-"+i).prepend('<div class=container><div class=image><img src=https://placeimg.com/640/480/any></div><div class=card><div class=section-title><h1>title</h1></div><div class=caption>'+response+'</div><div class=post-links><div class=likes><a href=#>&hearts; 12</a></div><div class=read-more><a href=#>Read More</a></div></div>');
-  }
-  });
-</script>
-
+  <script src="lorem.js"></script>
+  <script src="readmore.min.js"></script>
 </head>
 
 <body>
 
-  <header><h1>Travel Gram</h1></header>
-  
+  <header>
+    <h1>Travel Gram</h1>
+  </header>
+
   <div class="css-grid">
 
     <div class="post grid-1 half"></div>
@@ -66,5 +49,6 @@
   </div>
 
 </body>
+<script src="dummy-text.js"></script>
 
 </html>
