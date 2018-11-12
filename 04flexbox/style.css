@@ -7,15 +7,16 @@ But when the width shrinks down under 576px, it needs to be vertical
 2. For the image url, you can use https://placeimg.com/640/480/any
 3. Make sure the content and image are centered and look good with padding, etc.
 */
-
 :root {
+  font-family: "Times New Roman", Times, serif;
   color: #272d33;
-
   --navy: #30588c;
   --soft-gray: #f4f7fb;
+  --gray: #e4e8ea;
   --almost-black: #152935;
   --red: #E74C3C;
-  --sans-serif: -apple-system, Helvetica, Roboto, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+  --yellow:#F9E547;
+  --sans-serif: "Helvetica Neue", -apple-system, Helvetica, Roboto, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Arial, sans-serif;
 }
 
 html {
@@ -29,14 +30,9 @@ body {
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  margin-top: 0em;
-}
 
 h1,
 h2,
@@ -56,7 +52,7 @@ h6 {
   margin: 0 auto;
   padding: 3%;
   border-radius: 7px;
-  border: 3px solid #e4e8ea;
+  border: 3px solid var(--gray);
   border-radius: 7px;
   background: white;
   position: relative;
@@ -66,18 +62,22 @@ h6 {
   box-shadow: 0 0 4px 2px #dfe3e66e;
 }
 
-img {
+.image img {
   display: flex;
-  height: 100%;
   width: 100%;
   height: auto;
   max-height: 275px;
+  object-fit: cover;
 }
 
 .image {
   width: 100%;
   flex: 1 180px;
   padding: 2%;
+}
+
+img:hover {
+  opacity: .8;
 }
 
 .card {
@@ -93,7 +93,8 @@ img {
 }
 
 .section-title h1 {
-  margin: 0px;
+  margin: 0;
+  padding: 0 2%;
 }
 
 .caption {
@@ -109,6 +110,10 @@ img {
   overflow-x: hidden;
 }
 
+.caption li {
+  padding: 1%;
+}
+
 .caption::-webkit-scrollbar {
   width: 5px;
   height: 8px;
@@ -121,7 +126,7 @@ img {
 }
 
 .post-links {
-  border-top: 1px solid rgba(223, 227, 230, 0.42);
+  border-top: 1.5px solid rgba(223, 227, 230, 0.42);
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -140,31 +145,32 @@ a {
 
 .post-links>div {
   justify-content: flex-start;
-  background: #fff;
+  background: transparent;
   align-items: flex-start;
   font-size: inherit;
-  border: 2px solid #fff;
+  border: 2px solid transparent;
   font-family: var(--sans-serif);
+  background: #eaeef2;
+  border-radius: 5rem;
+  opacity: .6;
 }
 
 .post-links a {
   color: rgba(136, 151, 162, 0.95);
-  background: #eaeef2;
   transition: color 300ms ease-in;
   overflow: hidden;
   display: block;
-  border-radius: 20px;
-  padding: 2px 5px;
+  padding: 0px 5px;
   white-space: pre-line;
-  height: 1.45em;
+  height: 1rem;
+  line-height: 1rem;
   text-align: center;
-  border-width: 0px;
   transition: color 300ms ease-in;
 }
 
-.post-links div:hover a {
+.post-links div:hover {
   color: var(--navy);
-  background: #fff;
+  background: white;
 }
 
 .post-links .likes:hover a {
