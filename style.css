@@ -17,8 +17,7 @@ body {
   display: grid;
   padding-top: 3rem;
   position: relative;
-  width: 90%;
-  margin: 0 auto;
+  width: 95%;
 }
 
 .hello {
@@ -38,20 +37,12 @@ body {
 
 .content {
   text-transform: uppercase;
-  padding: .94rem 0px;
   font-size: 1.5em;
   vertical-align: bottom;
   line-height: 1.3em;
   word-break: none;
-}
-
-h1 {
-  font-weight: normal
-}
-
-a:visited,
-a {
-  color: #03020a;
+  width: 90%;
+  margin: 0 auto;
 }
 
 a {
@@ -61,17 +52,35 @@ a {
   word-break: none;
 }
 
+.content a {
+  position: relative;
+  border: 2px solid white;
+  border: 4px solid white;
+  word-wrap: break-word;
+  display: inline-flex;
+  background: #f6f6f6;
+  line-height: 100%;
+}
+
 .content a::before {
   content: counter(my-counter)".";
   color: #888;
-  margin-left: 4px;
-  margin-right: 1px;
+  font-size: .7em;
 }
 
 .content a:hover {
   color: black;
   background: #eee;
   font-style: italic;
+}
+
+h1 {
+  font-weight: normal
+}
+
+a:visited,
+a {
+  color: #03020a;
 }
 
 @keyframes Gradient {
@@ -114,4 +123,83 @@ a {
 .hello:focus-within>.popup-menu {
   visibility: visible;
   height: 77%;
+}
+
+.file {
+  padding: 1em 0em;
+  border: 2px solid #edeff1;
+  border-radius: 3px;
+  display: grid;
+  margin: 1em 0;
+  padding-top: 0;
+  margin: 5%;
+  position: absolute;
+}
+
+.file-bar {
+  height: 1.5em;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background-color: #edeff1;
+  margin-bottom: 1em;
+  position: relative
+}
+
+.file-bar:after {
+  content: "nntrn.github.io";
+  background: #fff;
+  width: 60%;
+  border: 1px solid #edeff1;
+  border-radius: 10px;
+  padding: 1px 4px;
+  position: absolute;
+  font-family: menlo;
+  top: 1.45em;
+  left: 3em;
+  z-index: 100;
+}
+
+.os-buttons,
+.os-buttons:before,
+.os-buttons:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.os-buttons {
+  background-color: #FDBD41;
+  top: 3px;
+  left: 18px
+}
+
+.os-buttons:before {
+  background-color: #FC605B;
+  top: 0;
+  left: -15px
+}
+
+.os-buttons:after {
+  background-color: #33C748;
+  top: 0;
+  left: 15px
+}
+
+.file-contents:before {
+  content: " ";
+  background: #fff;
+  width: 100%;
+  height: 3em;
+  position: absolute;
+  left: 0;
+  top: 1.2em;
+}
+
+.file-contents {
+  width: 100%;
+  padding: 0 1em;
+  margin: 0;
 }
