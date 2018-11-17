@@ -29,10 +29,10 @@ body {
   font-size: 1.12em;
   background: #211e1e;
   background-image: linear-gradient(to right, #000, #211e1e, #04175f);
-  background-size: 400% 400%;
+  background-size: 700% 400%;
   color: white;
   height: 95%;
-  animation: Gradient 25s linear infinite;
+  animation: Gradient 10s linear infinite;
 }
 
 .content {
@@ -83,20 +83,6 @@ a {
   color: #03020a;
 }
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-
-  50% {
-    background-position: 100% 50%
-  }
-
-  100% {
-    background-position: 0% 50%
-  }
-}
-
 .hello {
   position: relative;
   z-index: 2;
@@ -145,17 +131,19 @@ a {
   position: relative
 }
 
-.file-bar:after {
-  content: "nntrn.github.io";
-  background: #fff;
-  width: 60%;
-  border: 1px solid #edeff1;
-  border-radius: 10px;
-  padding: 1px 4px;
+.hello:after {
+  content: "@nntrn";
+  mix-blend-mode: overlay;
+  color: #fff;
+  opacity: 1.4;
+  border: 0px solid #edeff1;
+  border-radius: 0px;
+  padding: 2px 7px;
   position: absolute;
   font-family: menlo;
-  top: 1.45em;
-  left: 3em;
+  bottom: calc(100%/25);
+  margin: 0 auto;
+  right: 0;
   z-index: 100;
 }
 
@@ -190,9 +178,9 @@ a {
 
 .file-contents:before {
   content: " ";
-  background: #fff;
+  background: #edeff1;
   width: 100%;
-  height: 3em;
+  height: .34em;
   position: absolute;
   left: 0;
   top: 1.2em;
@@ -203,3 +191,19 @@ a {
   padding: 0 1em;
   margin: 0;
 }
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+#msg1 {display:none;}
