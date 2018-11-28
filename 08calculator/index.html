@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>calculator</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../resources/CSS/normalize.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="google" content="nositelinkssearchbox">
+  <meta name="google" content="notranslate">
+
+  <meta name="og:site_name" content="@nntrn" />
+  <meta name="og:title" content="dell-workbook" />
+  <meta name="og:url" content="https://nntrn.github.io/dell-workbook/">
+
+  <meta name="description" content="javascript calculator">
+
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+  <div class="container noselect">
+
+		<div id="calc">
+	
+			<div class="header">
+				<div id="previous">=</div>
+				<input type="text" id="results" disabled>
+			</div>
+	
+			<div class="section">
+	
+				<div class="number-keys">
+					<button class="num" data-key="1" value="1">1</button>
+					<button class="num" data-key="2" value="2">2</button>
+					<button class="num" data-key="3" value="3">3</button>
+	
+					<button class="num" data-key="4" value="4">4</button>
+					<button class="num" data-key="5" value="5">5</button>
+					<button class="num" data-key="6" value="6">6</button>
+	
+					<button class="num" data-key="7" value="7">7</button>
+					<button class="num" data-key="8" value="8">8</button>
+					<button class="num" data-key="9" value="9">9</button>
+	
+					<button id="reverse-sign" data-key="" value="(-1)">+/-</button>
+					<button class="num" data-key="0" value="0">0</button>
+					<button id="equals" data-key="">=</button>
+				</div>
+	
+				<div class="control-keys">
+					<button class="ops" data-key="+" value=",">+</button>
+					<button class="ops" data-key="-" value=",">-</button>
+					<button class="ops" data-key="*" value=",">*</button>
+					<button class="ops" data-key="/" value=",">/</button>
+				</div>
+	
+			</div>
+	
+			<div class="footer">
+				<button class="controls" >del</button>
+				<button id="clear" class="controls" >c</button>
+			</div>
+	
+		</div>
+	
+		<div id="test" style="top:0; position:absolute; right:0; "></div>
+	
+		<div id="test3" style="top:0; position:absolute; left:0; "></div>
+	
+	</div>
+	
+	
+
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
