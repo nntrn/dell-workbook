@@ -54,9 +54,13 @@ body {
   border-color: var(--gray2);
   border-style: solid;
   min-width: 20rem;
-  max-width: 30rem;
+  max-width: 23rem;
   width: 40%;
   box-shadow: inset -4px 0 0 0px var(--gray2), inset 0 0 5px 2px var(--gray2);
+}
+
+#calc div {
+  background: transparent;
 }
 
 .section {
@@ -111,15 +115,6 @@ button:focus:not(.controls) {
   background: white;
 }
 
-input {
-  width: 100%;
-  border: 0px solid white;
-  outline: 0;
-  font-size: 1em;
-  border-radius: 5px;
-  padding: 0% 2%;
-}
-
 button {
   transition: box-shadow 70ms linear;
   border: none;
@@ -153,7 +148,16 @@ button:hover {
 
 #results {
   text-align: right;
+  background: var(--gray2);
+  background-image: linear-gradient(to right, #ddd, var(--gray2));
+  width: 100%;
+  border: 0px solid var(--gray2);
+  outline: 0;
+  font-size: 1em;
+  border-radius: 5px;
+  padding: 1% 2%;
 }
+
 
 #equals,
 #reverse-sign {
@@ -163,7 +167,7 @@ button:hover {
 #previous {
   font-size: 0.25em;
   padding-bottom: 1%;
-  background: none;
+  background: var(--gray1);
   border: none;
   text-align: right !important;
   letter-spacing: 3px;
