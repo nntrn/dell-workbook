@@ -1,70 +1,80 @@
+"use strict";
 (function () {
-  "use strict";
-
+  // document.addEventListener("DomContentLoaded", (event) => {
   // Shortcut to get elements
   var el = function (element) {
     if (element.charAt(0) === "#") {
-      // If passed an ID...
-      return document.querySelector(element); // ... returns single element
+      // if passed an ID (hashtag) return single element
+      return document.querySelector(element);
     }
-
-    return document.querySelectorAll(element); // Otherwise, returns a nodelist
+    // otherwise, returns a nodelist
+    return document.querySelectorAll(element);
   };
 
   // Variables
-  var viewer = document.querySelector("#results"), // Calculator screen where result is displayed
+  var results = el("#results"),
+    equation = el("#equation"),
+    test = el("#test"),
+    history = el("#history"),
     equals = el("#equals"),
     clear = el("#clear"),
-    nums = el(".num"), // List of numbers
-    operation = el(".ops"), // List of operators
-    resultNum, // Result
+    backspace = el("#backspace"),
+    neg = el("#neg"),
+    nums = el(".num"),
+    operation = el(".ops"),
+    resultNum = 0,
     operator,
-    dataKey,
-    keyValue,
-    one,
-    two,
-    clearInput = 0,
-    calcString = "";
+    historyCount = 1,
+    historyCountStr = "[<span class='red'>" + eval(historyCount) + "</span>]: ",
+    clearInput = 0;
+
+  history.value = "";
+  history.innerHTML = historyCountStr;
 
   var setNum = function () {
-    dataKey = this.getAttribute("data-key");
-    keyValue = this.getAttribute("value");
+    var dataKey = this.getAttribute("data-key");
 
-    if (clearInput == 1) {
-      document.querySelector("#results").value = "";
-    }
-
-    calcString += keyValue;
+    updateResults(clearInput, dataKey);
     clearInput = 0;
-    document.querySelector("#results").value += keyValue;
 
+    updateHistory(dataKey);
+    history.style.opacity = "1";
   };
 
   var getOps = function () {
-    dataKey = this.getAttribute("data-key");
-    keyValue = this.getAttribute("value");
-    document.querySelector("#results").value += dataKey;
-    operator = dataKey;
-    calcString += keyValue;
-    document.getElementById("test3").innerHTML = calcString;
+    operator = this.getAttribute("data-key");
+    clearInput = 1;
+    updateResults(clearInput, operator);
+    history.value += ",";
+    history.innerHTML += " ";
+    updateHistory(operator);
+    history.innerHTML += " ";
+    history.value += ",";
   };
 
   var equal = function () {
-    var arr = calcString.split(",");
+    var getHistory = function (x = history.value) {
+      var arr = x.replace(/(=|,)/, ",");
+      return arr.split(",").filter(Number);
+    };
 
-    arr = arr.filter(Number);
+    var histArr = getHistory();
 
-    one = arr[arr.length - 2];
-    two = arr[arr.length - 1];
+    var one = histArr[histArr.length - 2];
+    var two = histArr[histArr.length - 1];
 
+    if (isNaN(one)) {
+      one = resultNum;
+    }
+
+    history.value += ",";
+    history.innerHTML += "<span class='blue'> = </span>";
     calcEquation(one, two, operator);
-
   };
 
   var calcEquation = function (firstVal, secondVal, operationVal) {
-    document.getElementById("previous").innerHTML = "";
-    document.getElementById("previous").innerHTML +=
-      Number(firstVal) + operationVal + Number(secondVal) + "=";
+    equation.innerHTML = "= ";
+    equation.innerHTML += Number(firstVal) + operationVal + Number(secondVal);
 
     clearInput = 1;
     calculate(firstVal, secondVal, operationVal);
@@ -87,33 +97,90 @@
       case "/":
         var result = Number(first) / Number(second);
         break;
-
-      default:
-        var result = Number(second);
     }
 
     if (!isNaN(result) && result % 1 !== 0) {
       result = result.toFixed(2);
     }
 
-    document.getElementById("results").value = result;
-    calcString += "," + result + ",";
+    results.value = result;
+    resultNum = result;
 
-    document.getElementById("test3").innerHTML = calcString;
+    historyCount += 1;
+    updateHistory(result);
+    history.innerHTML += "<br>[<span class='red'>" + historyCount + "</span>]: ";
+    history.value += ",";
   };
 
-  // When: Clear button is pressed. Clear everything
   var clearAll = function () {
-
-    calcString = "";
-    document.getElementById("test3").innerHTML = "";
-    document.querySelector("#results").value = "";
-    document.getElementById("previous").innerHTML = "=";
+    history.value = "";
+    historyCount = 1;
+    history.innerHTML = historyCountStr;
+    history.style.opacity = "0";
+    results.value = "";
+    equation.innerHTML = "= ";
   };
 
-  /* The click events */
+  var getShortcode = function (data) {
+    var rv = results.value,
+      hv = history.value,
+      hi = history.innerHTML;
 
-  // Add click event to numbers
+    return {
+      rv,
+      hv,
+      hi
+    };
+
+  };
+
+
+  var reverseSign = function () {
+
+    var {
+      rv,
+      hv,
+      hi
+    } = getShortcode();
+    var negNum = rv * -1;
+
+    results.value = negNum;
+    history.value = hv.substring(0, hv.lastIndexOf(",") + 1) + negNum;
+
+    var start = hi.lastIndexOf(":") - (historyCount.length + 1);
+    var end = hi.lastIndexOf(" ") + 1;
+    history.innerHTML = hi.substring(start, end) + negNum;
+  };
+
+  var backOne = function () {
+
+    var {
+      rv,
+      hv,
+      hi
+    } = getShortcode();
+
+    results.value = rv.substr(0, rv.length - 1);
+    history.value = hv.substr(0, hv.length - 1);
+    history.innerHTML = hi.substr(0, hi.length - 1);
+  };
+
+  var updateHistory = function (str) {
+    history.value += str;
+    history.innerHTML += str;
+    // scroll to bottom of div
+    history.scrollTop = history.scrollHeight;
+  };
+
+  var updateResults = function (clear, str) {
+    if (clear == 1) {
+      results.value = "";
+    }
+    results.value += str;
+  };
+
+  /* click events *****************************/
+
   for (var i = 0, l = nums.length; i < l; i++) {
     nums[i].onclick = setNum;
   }
@@ -122,9 +189,8 @@
     operation[i].onclick = getOps;
   }
 
-  // Add click event to equal sign
+  neg.onclick = reverseSign;
+  backspace.onclick = backOne;
   equals.onclick = equal;
-
-  // Add click event to clear button
   clear.onclick = clearAll;
 })();

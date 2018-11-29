@@ -7,6 +7,16 @@
   --blue: #3772ff;
 }
 
+.red {
+  color: var(--red);
+  font-weight: 400;
+}
+
+.blue {
+  color: var(--blue);
+  font-weight: 400;
+}
+
 * {
   box-sizing: border-box;
   overflow: hidden;
@@ -28,6 +38,7 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
+  flex-direction: column;
   top: 0;
   bottom: 0;
   right: 0;
@@ -46,7 +57,6 @@ body {
 
 #calc {
   padding: 1rem;
-  padding-top: 2rem;
   font-size: 2em;
   background: var(--gray1);
   border-radius: 5%;
@@ -101,33 +111,22 @@ button {
   font-size: 0.7em;
   margin: 1%;
   height: 30px;
-}
-
-button:hover,
-button:active:not(.controls),
-button:focus:not(.controls) {
-  box-shadow: inset 0 -2px 0 0 var(--gray2), inset 0 3px 0 0 var(--gray1);
-  opacity: 0.713;
-  font-weight: 400;
-}
-
-.header {
-  background: white;
-}
-
-button {
-  transition: box-shadow 70ms linear;
+  box-shadow: inset 0 -2px 0 0 transparent, inset 0 3px 0 0 transparent;
   border: none;
 }
 
 button:hover,
-button:hover {
-  cursor: pointer;
+button:active,
+button:focus {
+  transition: box-shadow 250ms linear;
+  box-shadow: inset 0 -2px 0 0 var(--gray2), inset 0px 2px 0 0 var(--gray1);
+  opacity: 0.713;
+  font-weight: 400;
+
 }
 
-.footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+button:hover {
+  cursor: pointer;
 }
 
 .controls {
@@ -143,8 +142,16 @@ button:hover {
 }
 
 .controls:hover {
+  transition: box-shadow 300ms linear;
   box-shadow: none;
 }
+
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 
 #results {
   text-align: right;
@@ -158,19 +165,36 @@ button:hover {
   padding: 1% 2%;
 }
 
-
 #equals,
-#reverse-sign {
-  background: var(--gray2)
+#neg {
+  background: var(--gray2);
 }
 
-#previous {
+#equation {
   font-size: 0.25em;
   padding-bottom: 1%;
-  background: var(--gray1);
-  border: none;
-  text-align: right !important;
-  letter-spacing: 3px;
+  text-align: right;
+  letter-spacing: 2px;
   color: var(--controls);
   font-weight: 400;
+  height: 1rem;
+}
+
+/* misc style ************************************/
+#history {
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 0.25em;
+  background: rgba(255, 255, 255, 0.1);
+  height: 3rem;
+  overflow-y: scroll;
+  opacity: 0;
+  color: rgba(0, 0, 0, .4);
+}
+
+.icon {
+  height: 30px;
+  opacity: 0.5;
+  padding: 3%;
+  margin: .5rem 0;
 }
