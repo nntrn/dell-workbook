@@ -82,21 +82,21 @@
 
   var calculate = function (first, second, op) {
     switch (op) {
-      case "+":
-        var result = Number(first) + Number(second);
-        break;
+    case "+":
+      var result = Number(first) + Number(second);
+      break;
 
-      case "-":
-        var result = Number(first) - Number(second);
-        break;
+    case "-":
+      var result = Number(first) - Number(second);
+      break;
 
-      case "*":
-        var result = Number(first) * Number(second);
-        break;
+    case "*":
+      var result = Number(first) * Number(second);
+      break;
 
-      case "/":
-        var result = Number(first) / Number(second);
-        break;
+    case "/":
+      var result = Number(first) / Number(second);
+      break;
     }
 
     if (!isNaN(result) && result % 1 !== 0) {
