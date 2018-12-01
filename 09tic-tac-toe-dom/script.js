@@ -1,7 +1,6 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function (event) {
-
   var el = function (element) {
     if (element.charAt(0) === "#") {
       // if passed an ID (hashtag) return single element
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 /*================================================= */
   var winner = el("#announce-winner"),
     clear = el("#clear"),
-    test = el("#test"),
     square = el("[data-cell]");
 
   /* add player moves
@@ -25,10 +23,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var addPlayerMoves = function () {
     var cellNum = this.getAttribute("data-cell");
+    let detectWinner = winner.innerText.length;
 
-    if (square[cellNum].innerText === "") {
+    if (square[cellNum].innerText === "" && detectWinner === 0) {
       player = player === "O" ? "X" : "O";
       square[cellNum].innerText = player;
+      square[cellNum].style.background = "transparent";
     }
 
     gameStatus();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       [2, 4, 6]
     ];
 
-    var didPlayerWin = false;
+    let didPlayerWin = false;
 
     winningCombos.forEach(combo => {
       didPlayerWin =
@@ -60,8 +60,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
           document.querySelector(`[data-cell="${combo[2]}"]`).innerText == player);
     });
 
-    return (didPlayerWin === true) ? (player + " is the winner!") : "";
-
+    if (didPlayerWin === true) {
+      clear.style.boxShadow = "inset 0 -8px 0 0 var(--main), inset 0 -11px 0 0 var(--red)";
+      let txt = player + " is the winner!";
+      return txt;
+    } else return "";
+    // return didPlayerWin === true ? player + " is the winner!" : "";
   };
 
   /* clear board
@@ -71,14 +75,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
       cell.innerText = "";
       winner.innerText = "";
       player = "O";
-    })
-
+      clear.style.boxShadow = "inset 0 -8px 0 0 var(--main), inset 0 -11px 0 0 white";
+    });
   };
 
   /* event loaders
 /*================================================= */
 
-  square.forEach(cell => cell.addEventListener('click', addPlayerMoves));
+  square.forEach(cell => cell.addEventListener("click", addPlayerMoves));
   clear.addEventListener("click", clearBoard);
-
 });
