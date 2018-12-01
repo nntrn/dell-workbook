@@ -15,3 +15,101 @@
 #announce-winner {
   font-size: 50px;
 }
+
+/* user custom style ***************************/
+:root {
+  --main: #2c3e50;
+  --red: #e74c3c;
+}
+
+body,
+html {
+  font-size: 100%;
+  font-family: Kalam;
+  font-weight: 700;
+  background: #2c3e50;
+}
+
+#board {
+  background: white;
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Kalam, cursive;
+  counter-reset: cellNum -1;
+}
+
+[data-cell] {
+  background: none;
+  border: none;
+  color: var(--red);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+[data-cell]:hover {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 0 10px white, inset 0 -18px 0 0px rgba(39, 174, 96, .45);
+  border-radius: 2px;
+}
+
+.title {
+  font-size: 4em;
+  font-weight: 700;
+  color: white;
+}
+
+#announce-winner {
+  font-size: 1.7em;
+  margin: 1rem auto;
+  height: 1em;
+  color: #27ae60;
+  display: flex;
+  justify-content: center;
+  font-family: Kalam, cursive;
+}
+
+button {
+  font-size: 1.75em;
+  background: rgba(0, 0, 0, .15);
+  background: transparent;
+  border: none;
+  display: flex;
+  margin: 0.5rem auto;
+  text-transform: uppercase;
+  z-index: 10;
+  outline: 0;
+  padding: .8rem 0rem;
+  line-height: 60%;
+  box-shadow: inset 0 -8px 0 0 var(--main), inset 0 -10px 0 0 #fff;
+  color: white;
+}
+
+button:hover {
+  box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, .2);
+  box-shadow: inset 0 -8px 0 0 var(--main), inset 0 -10px 0 0 #e74c3c;
+  transform: skewX(-10deg);
+}
+
+[data-cell]:nth-child(3n),
+[data-cell]:nth-child(3n-1) {
+  border-left: 9px solid var(--main);
+  border-bottom: 0px solid var(--main);
+}
+
+[data-cell]:nth-child(1n) {
+  border-bottom: 9px solid var(--main);
+}
+
+[data-cell]:nth-child(1n + 7) {
+  border-bottom: 0px solid #fff;
+}
