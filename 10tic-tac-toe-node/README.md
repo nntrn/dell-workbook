@@ -106,9 +106,8 @@ function getPrompt() {
 
 ## start code
 
-<details>
-<summary>index.js</summary>
-
+<details><summary>index.js</summary>
+  
 ```js
 'use strict';
 
@@ -171,6 +170,7 @@ function getPrompt() {
 </details>
 
 ### tests
+
 ```js
 if (typeof describe === 'function') {
 
