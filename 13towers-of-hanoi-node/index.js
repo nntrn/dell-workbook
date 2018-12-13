@@ -39,12 +39,6 @@ function isLegal(s, e) {
   let end = stacks[e].slice(-1)[0];
 
   return (end == null || start < end) ? true : false
-
-  if (end == null || start < end)
-    return true;
-
-  console.log("!!! move not legal")
-  return false;
 }
 
 function checkForWin() {
@@ -54,24 +48,21 @@ function checkForWin() {
       console.log("\n## END GAME ##");
       return true;
     }
-  } return false
+  }
+  return false
 }
 
 function towersOfHanoi(startStack, endStack) {
-
   if (isLegal(startStack, endStack)) {
     let movingBlock = stacks[startStack].pop();
     stacks[endStack].push(movingBlock);
     moves++;
     console.log("(" + movingBlock + ") moved from [" + startStack + "] to [" + endStack + "]");
-  }
-  else
-    console.log("MOVE NOT LEGAL")
+  } else
+    console.log("\n!!! MOVE NOT LEGAL**")
 }
 
-
 function getPrompt() {
-
   printStacks();
   rl.question('start stack: ', (startStack) => {
     rl.question('end stack: ', (endStack) => {
