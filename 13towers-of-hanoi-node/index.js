@@ -13,17 +13,19 @@ let stacks = {
   c: []
 };
 
-let moves = 0;
-const numOfStacks = 4;
-const stackNames = Object.getOwnPropertyNames(stacks);
+let moves = 1;
 
-// get length of stack a at the beginning 
-// const numOfStackstest = stacks.a.length;
+// get names of objects in stacks array
+const stackNames = Object.getOwnPropertyNames(stacks);
+const numOfStacks = stacks[stackNames[0]].length;
 
 function printStacks() {
+  console.log("\n" + moves);
+  console.log("-------------------");
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
+  console.log("-------------------");
 }
 
 function isLegal(s, e) {
@@ -36,36 +38,35 @@ function isLegal(s, e) {
   let start = stacks[s].slice(-1)[0];
   let end = stacks[e].slice(-1)[0];
 
-  if (end == null || start < end) {
-    return true
-  }
+  return (end == null || start < end) ? true : false
+
+  if (end == null || start < end)
+    return true;
+
   console.log("!!! move not legal")
+  return false;
 }
 
 function checkForWin() {
-  let lastObj = Object.getOwnPropertyNames(stacks).slice(-1)[0];
 
-  if (stacks[lastObj].length === numOfStacks) {
-    console.log("END GAME");
-    return false;
-  }
-  return true
+  for (let i = 1; i < stackNames.length; i++) {
+    if (stacks[stackNames[i]].length === numOfStacks) {
+      console.log("\n## END GAME ##");
+      return true;
+    }
+  } return false
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // start = stacks[startStack]
-  console.log();
-  if (isLegal(startStack, endStack)) {
 
-    moves++;
+  if (isLegal(startStack, endStack)) {
     let movingBlock = stacks[startStack].pop();
     stacks[endStack].push(movingBlock);
-    console.log("moves: "+moves)
+    moves++;
     console.log("(" + movingBlock + ") moved from [" + startStack + "] to [" + endStack + "]");
-    // console.log(stacks);
-    console.log("moves: " + moves)
   }
-
+  else
+    console.log("MOVE NOT LEGAL")
 }
 
 
@@ -76,14 +77,14 @@ function getPrompt() {
     rl.question('end stack: ', (endStack) => {
       towersOfHanoi(startStack, endStack);
 
-      if (checkForWin() === true) {
+      if (checkForWin() === false)
         getPrompt();
-      }
-      
+
     });
   });
 
 }
+
 
 // Tests
 
