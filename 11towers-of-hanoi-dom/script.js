@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     block = el("[data-block]");
 
   const numOfBlocks = block.length;
+  let startStack = stack[0];
   stack.forEach(cell => cell.addEventListener('click', towersOfHanoi));
 
   let counter = 0, moves = 0;
@@ -57,12 +58,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function checkForWin(stack, num){
     el("#announce-game-won").style.visibility = "hidden";
     block.forEach(cell => cell.classList.remove("game-win"));
-    // add animation when user wins 
-    if(stack.children.length == numOfBlocks){
+
+    
+    if(stack.children.length == numOfBlocks && stack != startStack){
+      // add animation when user wins 
       block.forEach(cell => cell.classList.add("game-win"));
       el("#announce-game-won").style.visibility = "visible";
       el("#announce-game-won").innerHTML = "completed! in " + num + " moves";
+      // reset moves and starting stack
       moves = 0;
+      startStack = stack;
     }  
   }
 
