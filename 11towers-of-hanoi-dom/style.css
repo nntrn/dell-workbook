@@ -37,7 +37,7 @@
   text-align: center;
 }
 
-/* custom css below this line *******************************/ 
+/* custom css below this line *******************************/
 :root {
   --default-font: 300 20px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
 
@@ -92,7 +92,8 @@ body {
 }
 
 [data-block]:hover {
-  border: 4px solid rgba(255, 255, 255, .75);
+  border: 0px solid rgba(255, 255, 255, .75);
+  box-shadow: inset 0px 0 0 50px rgba(255, 255, 255, .3);
 }
 
 #announce-game-won {
@@ -121,22 +122,21 @@ body {
 }
 
 .selected {
-  border: 4px solid rgba(255, 255, 255, .3);
-  box-shadow: none;
-  position: sticky;
+  border: 0px solid rgba(255, 255, 255, .93);
+  box-shadow: inset 0px 0 0 50px rgba(255, 255, 255, .3);
   transform: translate(2rem, 0);
   animation: pop 300ms ease-out 1;
 }
 
 .selected-stack {
-  background: rgba(0, 0, 0, .4);
+  background: rgb(174, 205, 231);
 }
 
 @keyframes pop {
   0% {
     transform: translate(0, 0);
   }
-  
+
   100% {
     transform: translate(2rem, 0);
   }

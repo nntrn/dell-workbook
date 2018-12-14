@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function checkForWin(stack, num){
     el("#announce-game-won").style.visibility = "hidden";
     block.forEach(cell => cell.classList.remove("game-win"));
-
     
     if(stack.children.length == numOfBlocks && stack != startStack){
       // add animation when user wins 
