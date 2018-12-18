@@ -2,11 +2,11 @@
 
 const assert = require('assert');
 const readline = require('readline');
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
 let board = [
   [' ', ' ', ' '],
   [' ', ' ', ' '],
@@ -14,8 +14,10 @@ let board = [
 ];
 
 let playerTurn = 'X';
+let turnCounter = 1;
 
 function printBoard() {
+  console.log("\nTURN: ", turnCounter);
   console.log('   0  1  2');
   console.log('0 ' + board[0].join(' | '));
   console.log('  ---------');
@@ -24,84 +26,88 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
-let numBoard = [
-  [0, 0, 0],
-  [0, 0, 0],
-  [0, 0, 0]
-];
-
-let continueGame = true;
-let turnCounter = 1;
-
-function horizontalWin(b) {
-  let hw = [
-    [b[0][0] + b[0][1] + b[0][2]],
-    [b[1][0] + b[1][1] + b[1][2]],
-    [b[2][0] + b[2][1] + b[2][2]]
+function horizontalWin() {
+  let winningCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8]
   ]
-  checkForWin(hw);
+  if (gameStatus(playerTurn, winningCombos)) {
+    console.log(playerTurn, ": HORIZONTAL WIN ***");
+    return checkForWin();
+  }
 }
 
-function verticalWin(b) {
-  let vw = [
-    [b[0][0] + b[1][0] + b[2][0]],
-    [b[0][1] + b[1][1] + b[2][1]],
-    [b[0][2] + b[1][2] + b[2][2]]
+function verticalWin() {
+  let winningCombos = [
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8]
   ]
-  checkForWin(vw);
+  if (gameStatus(playerTurn, winningCombos)) {
+    console.log(playerTurn, ": VERTICAL WIN ***");
+    return checkForWin();
+  }
 }
 
 function diagonalWin() {
-  let dw = [
-    [b[0][0] + b[1][1] + b[2][2]],
-    [b[0][2] + b[1][1] + b[2][0]]
+  let winningCombos = [
+    [0, 4, 8],
+    [2, 4, 6]
   ]
-  checkForWin(dw);
+  if (gameStatus(playerTurn, winningCombos)) {
+    console.log(playerTurn, ": DIAGONAL WIN ***");
+    return checkForWin();
+  }
 }
 
-function checkForWin(arr) {
-  arr.forEach(cell => {
-    if (Math.abs(cell) === 3) {
-      continueGame = false;
-      var winner = (cell == 3) ? "X is the winner" : "O is the winner";
-      printBoard();
-      console.log(winner);
-    }
+function checkForWin() {
+  return true
+}
+
+function gameStatus(player, wc) {
+
+  let didPlayerWin = false;
+  let flattenBoard = flatten(board);
+
+  wc.forEach(combo => {
+    didPlayerWin =
+      didPlayerWin ||
+      (
+        flattenBoard[`${combo[0]}`] === player &&
+        flattenBoard[`${combo[1]}`] === player &&
+        flattenBoard[`${combo[2]}`] === player)
   });
+
+  return didPlayerWin;
 }
 
 function ticTacToe(row, column) {
 
-  console.log("\nTURN: " + turnCounter);
-  let str = board[row][column];
+  board[row][column] = playerTurn;
+  horizontalWin();
+  verticalWin();
+  diagonalWin();
 
-  if (!/\S/.test(str)) {
-    board[row][column] = playerTurn;
-    playerTurn = playerTurn === "O" ? "X" : "O";
-    numBoard[row][column] = playerTurn === "O" ? 1 : -1;
-    turnCounter++;
-  }
-
-  horizontalWin(numBoard);
-  verticalWin(numBoard);
-  diagonalWin(numBoard);
+  playerTurn = playerTurn === "O" ? "X" : "O";
+  turnCounter++;
 }
 
-function getPrompt() {
+function flatten(arr) {
+  const flat = [].concat(...arr);
+  return flat.some(Array.isArray) ? flatten(flat) : flat;
+} /* source: https://stackoverflow.com/a/35548094 */
 
+
+function getPrompt() {
   printBoard();
   console.log("It's Player " + playerTurn + "'s turn.");
   rl.question('row: ', (row) => {
     rl.question('column: ', (column) => {
       ticTacToe(row, column);
-
-      if (continueGame == true && turnCounter < 10) {
-        getPrompt();
-      }
-
-    }); // column
-  }); // row
-
+      getPrompt();
+    });
+  });
 
 }
 
