@@ -4,17 +4,19 @@ html {
 
 body {
   font-family: arial;
-  height: 98vh;
-  width: 95vw;
+  height: 90vh;
+  width: 90vw;
   position: relative;
   margin: 3% auto;
+  background: #2980b9;
+  background: linear-gradient(to bottom right, #4ba4d4, #529cbb);
 }
 
 .container {
   display: grid;
   height: 100%;
   grid-gap: 3px;
-  grid-template-rows: .5fr .35fr 5fr .75fr;
+  grid-template-rows: auto auto 2fr auto;
   position: relative;
 }
 
@@ -30,11 +32,12 @@ body {
   background: #02B65E;
   flex-direction: column;
   position: relative;
+  width: 50%;
 }
 
 .instructions:before {
   content: attr(class);
-  width: 100%;
+  width: 70%;
   height: 1em;
   margin-top: -10px;
   font-size: .7em;
@@ -64,14 +67,12 @@ body {
 
 .sidebar>div {
   padding: .25em;
-  background: rgba(255,255,255,.2);
 }
 
 .canvas {
   position: relative;
-  background: linear-gradient(to bottom right, #fff, #88C7E2);
   display: grid;
-  grid-template-columns: 6fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 canvas {
@@ -94,9 +95,8 @@ canvas {
   position: absolute;
   width: 100%;
   left: 0;
-  margin-top: -15px;
+  margin-top: -19px;
   display: block;
-  background: #2980b9;
   color: white;
   font-size: .5em;
   padding: 0 2px;
@@ -110,16 +110,16 @@ canvas {
   margin-top: 10px;
   font-size: 2em;
   padding: 0 5px;
+  background: white;
+  border-radius: 10px;
 }
 
 .sidebar {
   position: absolute;
-  background: rgba(255,255,255.01);
   max-width: 60px;
   padding: .25rem;
   opacity: .9;
   right: 0;
-  height: 100%;
 }
 
 .sidebar div:before {
@@ -134,7 +134,7 @@ canvas {
 
 .sidebar button {
   border-radius: 50%;
-  padding: .6rem;
+  padding: .4rem;
   border: none;
 }
 
@@ -152,9 +152,17 @@ canvas {
   background: #eee;
   box-shadow: inset 0 -3px 0 0px #e2e2e2;
   margin: 1em 0;
+  padding:.5rem;
 }
 
 .sidebar button:hover {
   box-shadow: inset 0 0px 0 0px #e2e2e2;
   transform: translate(0,2px);
+}
+
+.disable-user-select{
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
 }

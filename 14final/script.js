@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Six levels of brightness from 0 to 5,
     // 0 being the darkest
     // red and green are set to 0
-    var rgb = [Math.random() * 0, Math.random() * 0, Math.random() * 256];
-    var mix = [brightness * 51, brightness * 51, brightness * 90];
+    var rgb = [Math.random() * 256, Math.random() * 0, Math.random() * 0];
+    var mix = [brightness * 90, brightness * 51, brightness * 51];
     var mixedrgb = [
       rgb[0] + mix[0],
       rgb[1] + mix[1],
