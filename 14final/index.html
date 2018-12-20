@@ -22,11 +22,11 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"
-    integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ"
-    crossorigin="anonymous"></script>
-
+    integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css" media="all">
   <link rel="stylesheet" type="text/css" href="css/fish.css" media="all">
@@ -37,34 +37,50 @@
 
   <div class="container">
 
-    <div class="title">
+    <div class="title disable-user-select">
       a fish farm
     </div>
-    <div class="instructions disable-user-select">
-      catch as many fish as you can
+
+    <div class="instructions" >
+      fish for coins or coin for fish
       <!-- TODO: instructions -->
     </div>
+    
     <div class="canvas">
-      <div class="main">
-        <div id="fishbowl"></div>
-        <canvas id="water"></canvas>
+      <div id="fishbowl">
+          <canvas id="water">
+             <!-- TODO: canvas -->
+          </canvas>
       </div>
-
+      
       <div class="sidebar">
+        <!-- UPGRADES -->
         <div class="upgrades">
-            <button id="upgrade1" title="upgrade"
-            href="#" onclick="getUpgrade()" class="btn-upgrade"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></button>
+          <button id="upgrade1" title="upgrade" onclick="" class="btn-upgrade">
+            <i class="fas fa-arrow-alt-circle-up fa-2x"></i>
+            <!-- TODO: upgrades -->
+          </button>
+          <button id="add-more-fish" title="call a school of fish for 100 coins" onclick="schoolOfFish(20,1,100)" class="btn-buff">
+            <i class="fas fa-fish fa-2x"></i>
+          </button>
         </div>
+
+        <!-- ITEMS -->
         <div class="items">
-            <button id="fish-food" title="fish food"
-            href="#" onclick="buyFishFood()" class="btn-items"><i class="fas fa-cookie-bite fa-2x"></i></button>
+          <button id="fish-food" title="fish food" onclick="" class="btn-items">
+            <i class="fas fa-cookie-bite fa-2x"></i>
+            <!-- TODO: items -->
+          </button>
         </div>
-        <div class="buffs">
-            <button id="buff1" title="buff"
-            href="#" onclick="getBuff()" class="btn-buff"><i class="fas fa-hat-wizard fa-2x"></i></button>
+
+        <!-- USER -->
+        <div class="user">
+          <!-- TODO: user -->
         </div>
-      </div>
-    </div>
+
+      </div> <!-- //////////// sidebar -->
+
+    </div><!-- //////////// canvas -->
     <div class="stats disable-user-select">
       <div class="catches">0</div>
       <div class="coins">0</div>
@@ -73,7 +89,7 @@
       </div>
     </div>
 
-  </div><!-- container -->
+  </div><!-- //////////// container -->
 
   <script type="text/javascript" src="script.js"></script>
 </body>
